@@ -1,0 +1,184 @@
+.pagination {
+    padding-top: 70px;
+    padding-bottom: 50px;
+    position: relative;
+    @include media('<desktop') {
+        padding-top: 50px;
+        padding-bottom: 70px;
+    }
+}
+
+.wp-pagenavi {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .current, .pagination-list__button_page_active {
+        font-size: 20px;
+    }
+    .pagination-list__button_disabled{
+        display: none;
+    }
+    .pagenavi-arrow {
+        position: relative;
+        font-size: 20px;
+        &:before {
+            content: "";
+            position: absolute;
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            border: solid $blue;
+            transition: all $transition;
+            top: 50%;
+        }
+        &.disable {
+            span {
+                color: $grey;
+            }
+            &:before {
+                border-color: $grey;
+            }
+            &:hover {
+                span {
+                    color: $grey;
+                }
+                &:before {
+                    border-color: $grey;
+                }
+            }
+        }
+        span {
+            transition: color $transition;
+        }
+        &:hover {
+            transition: all .25s;
+            span {
+                color: $blue;
+            }
+            &:before {
+                border-color: $blue;
+            }
+        }
+    }
+
+    a, span {
+        cursor: pointer;
+        color: $grey;
+        font-size: 20px;
+        padding-left: 15px;
+        padding-right: 15px;
+        transition: color $transition, background-color $transition;
+        &:hover {
+            color: $blue;
+        }
+    }
+
+    .extend {
+        color: $grey;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    .current, .pagination-list__button_page_active {
+        color: $darkblue;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+}
+
+.previouspostslink, .nextpostslink, .pagination-list__arrow {
+    position: relative;
+    display: inline-block;
+    min-width: 40px;
+    min-height: 40px;
+    padding: 0;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: none;
+    background-color: $white;
+    font-size: 0;
+    box-shadow: 0 0 18px 10px rgba(0, 0, 0, 0.04);
+    transition: background-color $transition;
+    overflow: hidden;
+    text-indent: -9999px;
+    @include media('<desktop') {
+        position: absolute;
+        left: calc(50% + 30px);
+        bottom: 0;
+        transform: translateX(-50%);
+    }
+    @include media('>=desktop') {
+        transition: background-color .3s;
+        min-width: 46px;
+        min-height: 46px;
+        width: 46px;
+        height: 46px;
+
+        &:hover {
+            background-color: $blue;
+
+            &::before,
+            &::after {
+                background-color: $white;
+            }
+        }
+    }
+
+    &::before,
+    &::after {
+        content: '';
+        position: absolute;
+        left: 50%;
+        width: 8px;
+        height: 2px;
+        background-color: $blue;
+        transition: background-color $transition;
+        @include media('>=desktop') {
+            width: 9px;
+        }
+    }
+
+    &::before {
+        top: 17px;
+        transform: translateX(-50%) rotate(45deg);
+
+        @include media('>=desktop') {
+            top: 19px;
+        }
+    }
+
+    &::after {
+        bottom: 17px;
+        transform: translateX(-50%) rotate(-45deg);
+
+        @include media('>=desktop') {
+            bottom: 19px;
+        }
+    }
+
+    &.disable {
+        pointer-events: none;
+        background: $white;
+        &::before,
+        &::after {
+            background-color: $dark-gray;
+        }
+    }
+}
+
+.previouspostslink, .pagination-list__arrow_prev {
+    transform: rotate(180deg);
+    @include media('<desktop') {
+        margin-left: -85px;
+    }
+    @include media('>=desktop') {
+        margin-right: 150px;
+    }
+}
+.nextpostslink, .pagination-list__arrow_next {
+    @include media('>=desktop') {
+        margin-left: 150px;
+    }
+}

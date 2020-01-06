@@ -1,0 +1,124 @@
+.video {
+    padding-left: 15px;
+    padding-right: 15px;
+    margin: 20px 0 40px;
+    @include media(">=desktop") {
+        padding-left: 20px;
+        padding-right: 20px;
+        margin-bottom: 60px;
+    }
+    @include media(">=large-desktop") {
+        padding-left: 15px;
+        padding-right: 15px;
+        margin-bottom: 100px;
+    }
+    .featured-banners & {
+        padding-left: 0;
+        padding-right: 0;
+        margin-bottom: 30px;
+    }
+    .container-large {
+        padding-left: 0;
+        padding-right: 0;
+        max-width: 1780px;
+    }
+    .bg-overlay {
+        position: relative;
+        &:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background-color: rgba($black, .56);
+            z-index: 1;
+        }
+    }
+
+    .plyr--playing {
+        z-index: 3;
+    }
+    .plyr__menu {
+        display: none;
+    }
+    [data-plyr="pip"] {
+        display: none;
+    }
+    [data-plyr="play"].plyr__controls__item {
+        margin-bottom: 0;
+        .no-touch & {
+            @include media(">=desktop") {
+                display: none;
+            }
+        }
+    }
+    [data-plyr="fullscreen"] {
+        &:hover {
+            background-color: transparent !important;
+            box-shadow: none !important;
+        }
+    }
+    .plyr__tab-focus, .plyr__control--pressed {
+        background-color: transparent !important;
+        box-shadow: none !important;
+        &:hover {
+            background-color: transparent !important;
+            box-shadow: none !important;
+        }
+    }
+    .plyr__time, .plyr__volume {
+        display: none;
+    }
+    .plyr {
+        height: 100%;
+        width: 100%;
+        &:fullscreen {
+            z-index: 60 !important;
+
+        }
+    }
+
+    .plyr__video-wrapper {
+        position: relative;
+        padding-bottom: 60%;
+        @include media(">=desktop") {
+            padding-bottom: 51.5%;
+        }
+        @include media(">=large-desktop") {
+            padding-bottom: 40%;
+        }
+    }
+
+    .plyr__video-wrapper video {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        top: 0;
+        left: 0;
+    }
+    .plyr__control--overlaid {
+        background-color: transparent;
+        border: 1px solid $white;
+        width: 80px;
+        height: 80px;
+        svg {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        &:hover {
+            background-color: transparent;
+        }
+    }
+    .plyr__poster {
+        background-size: cover;
+    }
+    .plyr--full-ui input[type=range] {
+        color: $blue;
+    }
+}
+
+.plyr--video button, .plyr--video .plyr__control.plyr__tab-focus, .plyr--video .plyr__control:hover, .plyr--video .plyr__control[aria-expanded=true] {
+    background: transparent !important;
+    box-shadow: none !important;
+}

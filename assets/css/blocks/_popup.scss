@@ -1,0 +1,150 @@
+.modal-block {
+    max-height: 95vh;
+    max-width: 95vw;
+    width: 100%;
+    background-color: $white;
+    overflow-y: auto;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity $transition, visibility $transition;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding-left: 15px;
+    padding-right: 15px;
+    @include media('>=tablet') {
+        width: auto;
+    }
+    &.visible {
+        opacity: 1;
+        visibility: visible;
+        z-index: 9999999999;
+    }
+    @include media('>=desktop') {
+        box-shadow: 0 2px 18px rgba(0, 0, 0, 0.2);
+        max-height: 85vh;
+    }
+    &.buy-now {
+        p {
+            display: none;
+            @include media('>=desktop') {
+                display: block;
+                text-align: center;
+            }
+        }
+    }
+    p {
+        @include media('>=desktop') {
+
+            font-size: 20px !important;
+            color: $darkblack;
+            max-width: none !important;
+            padding-top: 0 !important;
+            display: block;
+        }
+    }
+    .social-links {
+        justify-content: center;
+        margin: 30px 0 15px;
+        @include media('>=desktop') {
+            margin-bottom: 0;
+        }
+        li {
+            a {
+                display: inline-block;
+                margin-top: 0;
+                span {
+                    display: none;
+                    font-size: 14px;
+                    @include media('>=desktop') {
+                        display: block;
+
+                    }
+                }
+            }
+
+        }
+        svg {
+            @include media('>=desktop') {
+                opacity: 1;
+            }
+        }
+    }
+    @include media('>=desktop') {
+        z-index: 10;
+        background-color: $white;
+        padding: 60px;
+    }
+    .instagram {
+        #clock-gradient {
+            opacity: 1;
+        }
+    }
+    .facebook {
+        svg {
+            fill: #0065b4;;
+        }
+    }
+    .twitter {
+        svg {
+            fill: #3dabff;
+        }
+        &:hover {
+            svg {
+                fill: #3dabff;
+            }
+        }
+    }
+    .youtube {
+
+        svg {
+            fill: #d90119;
+        }
+
+    }
+
+}
+
+.close, .mfp-close {
+    width: 19px;
+    height: 19px;
+    border-radius: 50%;
+    position: absolute;
+    cursor: pointer;
+    transition: background-color $transition;
+    top: 25px;
+    right: 25px;
+
+    &:before {
+        content: '';
+        width: 20px;
+        height: 1px;
+        display: block;
+        background-color: $black;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) rotate(45deg);
+    }
+    &:after {
+        content: '';
+        width: 1px;
+        height: 20px;
+        display: block;
+        background-color: $black;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) rotate(45deg);
+    }
+}
+
+.mfp-close {
+    &:before, &:after {
+        background-color: $black;
+        @include media('>=desktop') {
+            background-color: $white;
+        }
+    }
+}

@@ -1,0 +1,37 @@
+.intro-slider + .text-content{
+    padding-top: 150px;
+    @include media('>=desktop') {
+        padding-top: 180px;
+    }
+
+    @include media('>=large-desktop') {
+        padding-top: 240px;
+    }
+    p{
+        &:last-child{
+            margin-bottom: 0;
+        }
+    }
+}
+
+.text-content {
+    .container {
+        max-width: 1040px;
+    }
+}
+
+.text-template {
+    padding-top: 150px;
+    @include media('>=desktop') {
+        padding-top: 180px;
+    }
+
+    @include media('>=large-desktop') {
+        padding-top: 240px;
+    }
+    p{
+        &:last-child{
+            margin-bottom: 0;
+        }
+    }
+}

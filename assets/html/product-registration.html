@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+@@include("head.html", {"title": "Privacy Policy"})
+<body>
+<div class="wrapper">
+    @@include("header.html")
+
+    <main class="main">
+
+        <div class="intro-slider">
+            <div class="banner intro small-height text-left middle-left no-overlay">
+                <div class="content-holder"
+                     data-desktopbg="../images/subcategory.jpg">
+                    <div class="text-holder">
+                        <h2>Product Registration</h2>
+                        <p>Felis nibh, efficitur eget ex egestas, finibus fermentum quam. Curabitur eget pretium leo.
+                            Etiam sit amet tincidunt dolor. Nunc rhoncus ultrices magna.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <section class="registration">
+            <div class="container">
+                <div class="holder">
+                    <div class="about-registration">
+                        <h3>Why Register Your Product?</h3>
+                        <ul>
+                            <li>
+                                <div class="icon">
+                                    <img src="../images/customer-support.svg" alt="icon">
+                                </div>
+                                <div>
+                                    <h5>Service and Support</h5>
+                                    <p>Etiam ut orci quis magna volutpat tincidunt id id purus. Sed cursus arcu
+                                        nulla.</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="icon">
+                                    <img src="../images/document.svg" alt="icon">
+                                </div>
+                                <div>
+                                    <h5>Service and Support</h5>
+                                    <p>Etiam ut orci quis magna volutpat tincidunt id id purus. Sed cursus arcu
+                                        nulla.</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="icon">
+                                    <img src="../images/email-icon.svg" alt="icon">
+                                </div>
+                                <div>
+                                    <h5>Service and Support</h5>
+                                    <p>Etiam ut orci quis magna volutpat tincidunt id id purus. Sed cursus arcu
+                                        nulla.</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="form-registration">
+                        <form action="#" class="form-holder">
+                            <div class="form-wrapper">
+                                <div class="form-group">
+                                    <label for="first-name">First Name <span>*</span></label>
+                                    <input id="first-name" type="text">
+                                    <span class="error-label">This field is required.</span>
+                                </div>
+                                <div class="form-group">
+                                    <label for="last-name">Last Name <span>*</span></label>
+                                    <input id="last-name" type="text">
+                                    <span class="error-label">This field is required.</span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email<span>*</span></label>
+                                <input id="email" type="email">
+                                <span class="error-label">The e-mail address is invalid.</span>
+                            </div>
+                            <div class="form-group">
+                                <label for="tel">Phone Number<span>*</span></label>
+                                <input id="tel" class="error" type="tel" value="tel">
+                                <span class="error-label">This field is required.</span>
+
+                            </div>
+                            <div class="form-group">
+                                <label for="buy">Where did you buy your Product?</label>
+                                <input id="buy" type="text" placeholder="e.g. Lowe’s">
+                            </div>
+                            <div class="form-group">
+                                <label for="model-number">Model Number<span>*</span></label>
+                                <input id="model-number" type="number">
+                                <span class="error-label">This field is required.</span>
+                            </div>
+                            <div class="form-group">
+                                <label for="serial-number">Serial Number</label>
+                                <input id="serial-number" type="number">
+                            </div>
+                            <div class="form-group datepicker-group">
+                                <label for="datepicker">Date of Purchase<span>*</span>
+                                    <span class="icon"></span>
+                                </label>
+                                <input id="datepicker" type="text" placeholder="Select Date…">
+
+                                <span class="error-label">This field is required.</span>
+                            </div>
+                            <div class="button-block">
+                                <button class="button" type="button"><span>Submit</span></button>
+                                <span class="success">Thank you! Your product is registered!</span>
+                            </div>
+                            <p><span>*</span> Indicates required field.</p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    @@include("footer.html")
+</div>
+@@include("scripts.html")
+</body>
+</html>

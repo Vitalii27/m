@@ -1,0 +1,54 @@
+// LIBS
+@import "libs/jcf";
+@import "libs/normalize";
+@import "libs/mixins";
+@import "libs/fonts";
+@import "libs/include-media";
+@import "libs/styleguide";
+@import "libs/gridlex";
+@import "libs/wp-styles";
+@import "libs/slick";
+@import "libs/magnific";
+@import "libs/plyr";
+@import "libs/jquery-social-share-bar";
+
+//BLOCKS
+@import "blocks/preloader";
+@import "blocks/header";
+@import "blocks/footer";
+@import "blocks/any-stand-alone-block";
+@import "blocks/socials";
+@import "blocks/section-title";
+@import "blocks/help-info";
+@import "blocks/social-share";
+@import "blocks/banner";
+@import "blocks/chess-list";
+@import "blocks/new-products";
+@import "blocks/video";
+@import "blocks/product";
+@import "blocks/anchors";
+@import "blocks/specifications";
+@import "blocks/gallery-slider";
+@import "blocks/popup";
+@import "blocks/pagination";
+@import "blocks/products-catalog";
+@import "blocks/visual-stat";
+@import "blocks/print";
+@import "blocks/news-list";
+@import "blocks/datapicker";
+@import "blocks/range";
+@import "blocks/magnolia-support";
+@import "blocks/compare-popup";
+
+//PAGES
+@import "pages/common";
+@import "pages/home";
+@import "pages/text-template";
+@import "pages/product-details";
+@import "pages/support";
+@import "pages/faq";
+@import "pages/compare";
+@import "pages/news-details";
+@import "pages/news";
+@import "pages/product-registration";
+@import "pages/search";

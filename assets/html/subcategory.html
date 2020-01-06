@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+@@include("head.html", {"title": "Subcategory | Midea"})
+<body>
+<div class="wrapper">
+  @@include("header.html")
+  <main class="main">
+    <div class="breadcrumbs">
+      <a href="#">Home</a>
+      <a href="#">Products</a>
+      <a href="#">Washers</a>
+    </div>
+    <div class="intro-slider">
+      <div class="banner intro small-height text-left middle-left">
+        <div class="content-holder" style="background-image: url('../images/subcategory.jpg')">
+          <div class="text-holder">
+            <h1>Washers</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet.
+              Proin gravida dolor sit amet lacus accumsan et viverra justo commodo.</p>
+            <a href="#" class="button">Shop Now</a>
+          </div>
+        </div>
+      </div>
+      <div class="banner intro small-height text-center middle-center">
+        <div class="content-holder" style="background-image: url('../images/hp1.jpg')">
+          <div class="text-holder">
+            <h1>Store
+              <mark>more</mark>
+            </h1>
+            <p>With the press of a button, this convertible freezer can change from freezer to fridge to
+              give you the extra space you need.</p>
+            <a href="#" class="button">Shop Now</a>
+          </div>
+        </div>
+      </div>
+      <div class="banner intro small-height text-left bottom-left">
+        <div class="content-holder" style="background-image: url('../images/hp2.jpg')">
+          <div class="text-holder">
+            <h1>Store food</h1>
+            <a href="#" class="button">Shop Now</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="featured-banners">
+      <div class="container-large">
+        <div class="banner small-height text-left middle-left">
+          <div class="content-holder" style="background-image: url('../images/right.png')">
+            <div class="text-holder">
+              <h3>Smart Washers</h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet.
+                Proin gravida dolor sit amet lacus accumsan et viverra justo commodo.</p>
+              <a href="#" class="button">Learn More</a>
+            </div>
+          </div>
+        </div>
+        <div class="banner small-height text-left middle-right">
+          <div class="content-holder" style="background-image: url('../images/left.png')">
+            <div class="text-holder">
+              <p>It has 6 wash cycles, 3 water temperature settings, and 3 water level options so your
+                clothes get the best clean possible.</p>
+            </div>
+          </div>
+        </div>
+        <div class="banner small-height text-left middle-left">
+          <div class="content-holder" style="background-image: url('../images/right.png')">
+            <div class="text-holder">
+              <p>Portable top load washer offers incredible convenience for those without in-suite
+                laundry.</p>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="banner small-height text-right bottom-right">
+            <div class="content-holder" style="background-image: url('../images/center.png')">
+              <div class="text-holder">
+                <h3>Soft Close Lid</h3>
+                <p>Allows lid to stay open and close gentrly.</p>
+              </div>
+            </div>
+          </div>
+          <div class="banner small-height text-left bottom-left">
+            <div class="content-holder" style="background-image: url('../images/center.png')">
+              <div class="text-holder">
+                <h3>Child Lock</h3>
+                <p>Prevent children from pressing buttons or careless operations.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="app" class="products-catalog"
+         :category="setCategory('washers')"
+         :setCompare="setCompareLink('https://midea.bigdropinc.net/compare-products.html')"
+         :json='setJson({
+         filterConfiguration: [
+          {
+            "property": "color",
+            "label": "Color",
+            "options": ["Black", "White", "Yellow"]
+          },
+          {
+            "property": "capacity",
+            "label": "Capacity",
+            "options": ["0.9 Cu.Ft", "1.2 Cu.Ft", "2.4 Cu.Ft"]
+          },
+          {
+            "property": "features",
+            "label": "Product features",
+            "options": ["Childlock", "Waterproof", "Low noise"]
+          }
+        ],
+        arrayData: [{"products":[{"uuid":"19a9e36b-29c7-4ada-b603-41a7aa7b1699","name":"test 7.2 Cu. Ft. Capacity Front Load Washer Graphite Silver ","modelNumber":"test 7.2 Cu.","badge":"none","price":500.0,"image":"/.imaging/default/dam/us/product/MLH52S7AGS-5.2-FL-Washer-Front-Open-Door-300x300.jpg/jcr:content.jpg","link":"/product/Laundry/Washers/a-test-7.2-Cu.-Ft.-Capacity-Front-Load-Washer-Graphite-Silver-1","teaserFeatures":[],"color":"#1E22AA"}],"colors":[{"uuid":"95d3471b-c098-4f90-97a3-ccdac7839ef6","name":"Blue","value":"1E22AA"}],"filter":{"92596732-a0ef-47aa-96c4-dd49d4715bfa":["Automatic Load Sensing","End-of-Cycle Signal"],"8a90735a-3263-4512-bbf1-3b2e7712a0a6":["Bronze","White","Blue"],"f2f66954-fc3a-42f1-a1ba-a0eb7d1dfc58":["Under 7.2 Cu. Ft."]}},{"products":[{"uuid":"25f23d90-b5df-4f66-b370-925efee12d13","name":"test 7.2 Cu. Ft. Capacity Front Load Washer Graphite Silver ","modelNumber":"test 7.2 Cu.","badge":"none","price":500.0,"image":"/.imaging/default/dam/us/product/MLH52S7AGS-5.2-FL-Washer-Front-Open-Door-300x300.jpg/jcr:content.jpg","link":"/product/Laundry/Washers/a-test-7.2-Cu.-Ft.-Capacity-Front-Load-Washer-Graphite-Silver-2","teaserFeatures":[],"color":"#1E22AA"}],"colors":[{"uuid":"95d3471b-c098-4f90-97a3-ccdac7839ef6","name":"Blue","value":"1E22AA"}],"filter":{"92596732-a0ef-47aa-96c4-dd49d4715bfa":["Automatic Load Sensing","End-of-Cycle Signal"],"8a90735a-3263-4512-bbf1-3b2e7712a0a6":["Bronze","White","Blue"],"f2f66954-fc3a-42f1-a1ba-a0eb7d1dfc58":["Under 7.2 Cu. Ft."]}},{"products":[{"uuid":"b8ec7642-e062-4ade-b148-5e21c8e557ff","name":"test 7.2 Cu. Ft. Capacity Front Load Washer Graphite Silver ","modelNumber":"test 7.2 Cu.","badge":"none","price":500.0,"image":"/.imaging/default/dam/us/product/MLH52S7AGS-5.2-FL-Washer-Front-Open-Door-300x300.jpg/jcr:content.jpg","link":"/product/Laundry/Washers/a-test-7.2-Cu.-Ft.-Capacity-Front-Load-Washer-Graphite-Silver-0","teaserFeatures":[],"color":"#1E22AA"}],"colors":[{"uuid":"95d3471b-c098-4f90-97a3-ccdac7839ef6","name":"Blue","value":"1E22AA"}],"filter":{"92596732-a0ef-47aa-96c4-dd49d4715bfa":["Automatic Load Sensing","End-of-Cycle Signal"],"8a90735a-3263-4512-bbf1-3b2e7712a0a6":["Bronze","White","Blue"],"f2f66954-fc3a-42f1-a1ba-a0eb7d1dfc58":["Under 7.2 Cu. Ft."]}},{"products":[{"uuid":"16a5e17a-937c-46e0-b533-7452d3780c42","name":"test 7.2 Cu. Ft. Capacity Front Load Washer Graphite Silver archive","modelNumber":"test 7.2 Cu.","badge":"none","price":500.0,"image":"/.imaging/default/dam/us/product/MLH52S7AGS-5.2-FL-Washer-Front-Open-Door-300x300.jpg/jcr:content.jpg","link":"/product/Laundry/Washers/a-test-7.2-Cu.-Ft.-Capacity-Front-Load-Washer-Graphite-Silver1","teaserFeatures":[],"color":"#1E22AA"}],"colors":[{"uuid":"95d3471b-c098-4f90-97a3-ccdac7839ef6","name":"Blue","value":"1E22AA"}],"filter":{"92596732-a0ef-47aa-96c4-dd49d4715bfa":["Automatic Load Sensing","End-of-Cycle Signal"],"f2f66954-fc3a-42f1-a1ba-a0eb7d1dfc58":["Under 7.2 Cu. Ft."]}},{"products":[{"uuid":"6b2ae845-c8e2-4c1b-98e1-8c222f35968f","name":"test2 3 Cu. Ft. Capacity Front Load Washer Graphite Silver MLH52S7AGS","modelNumber":"test2 3 Cu. Ft.","badge":"none","price":799.0,"image":"/.imaging/default/dam/us/product/MLH52S7AWW-5.2-Cu-Ft-FL-Washer-Closeup-of-Panel.jpg/jcr:content.jpg","link":"/product/Laundry/Washers/b-test2-3-Cu.-Ft.-Capacity-Front-Load-Washer-Graphite-Silver-MLH52S7AGS1","teaserFeatures":[],"color":"#C8102E"}],"colors":[{"uuid":"d990faa4-fd42-444f-984f-b8ea149e2080","name":"Red","value":"C8102E"}],"filter":{"92596732-a0ef-47aa-96c4-dd49d4715bfa":["Automatic Load Sensing","Child Lock"],"8a90735a-3263-4512-bbf1-3b2e7712a0a6":["Red","Black"],"f2f66954-fc3a-42f1-a1ba-a0eb7d1dfc58":["3 Cu. Ft."]}},{"products":[{"uuid":"4686897b-cb54-4543-97a7-d8eacbd67936","name":"test2 3 Cu. Ft. Capacity Front Load Washer Graphite Silver MLH52S7AGS","modelNumber":"test2 3 Cu. Ft.","badge":"none","price":799.0,"image":"/.imaging/default/dam/us/product/MLH52S7AWW-5.2-Cu-Ft-FL-Washer-Closeup-of-Panel.jpg/jcr:content.jpg","link":"/product/Laundry/Washers/b-test2-3-Cu.-Ft.-Capacity-Front-Load-Washer-Graphite-Silver-MLH52S7AGS2","teaserFeatures":[],"color":"#C8102E"}],"colors":[{"uuid":"d990faa4-fd42-444f-984f-b8ea149e2080","name":"Red","value":"C8102E"}],"filter":{"92596732-a0ef-47aa-96c4-dd49d4715bfa":["Automatic Load Sensing","Child Lock"],"8a90735a-3263-4512-bbf1-3b2e7712a0a6":["Red","Black"],"f2f66954-fc3a-42f1-a1ba-a0eb7d1dfc58":["3 Cu. Ft."]}},{"products":[{"uuid":"6eb727bf-3d85-4588-b80f-c933b52dc800","name":"test2 3 Cu. Ft. Capacity Front Load Washer Graphite Silver MLH52S7AGS","modelNumber":"test2 3 Cu. Ft.","badge":"none","price":799.0,"image":"/.imaging/default/dam/us/product/MLH52S7AWW-5.2-Cu-Ft-FL-Washer-Closeup-of-Panel.jpg/jcr:content.jpg","link":"/product/Laundry/Washers/b-test2-3-Cu.-Ft.-Capacity-Front-Load-Washer-Graphite-Silver-MLH52S7AGS","teaserFeatures":[],"color":"#C8102E"}],"colors":[{"uuid":"d990faa4-fd42-444f-984f-b8ea149e2080","name":"Red","value":"C8102E"}],"filter":{"92596732-a0ef-47aa-96c4-dd49d4715bfa":["Automatic Load Sensing","Child Lock"],"8a90735a-3263-4512-bbf1-3b2e7712a0a6":["Red","Black"],"f2f66954-fc3a-42f1-a1ba-a0eb7d1dfc58":["3 Cu. Ft."]}},{"products":[{"uuid":"13e05143-90aa-4741-81ca-51d01879ce66","name":"test2 3 Cu. Ft. Capacity Front Load Washer Graphite Silver MLH52S7AGS","modelNumber":"test2 3 Cu. Ft.","badge":"none","price":799.0,"image":"/.imaging/default/dam/us/product/MLH52S7AWW-5.2-Cu-Ft-FL-Washer-Closeup-of-Panel.jpg/jcr:content.jpg","link":"/product/Laundry/Washers/b-test2-3-Cu.-Ft.-Capacity-Front-Load-Washer-Graphite-Silver-MLH52S7AGS0","teaserFeatures":[],"color":"#C8102E"}],"colors":[{"uuid":"d990faa4-fd42-444f-984f-b8ea149e2080","name":"Red","value":"C8102E"}],"filter":{"92596732-a0ef-47aa-96c4-dd49d4715bfa":["Automatic Load Sensing","Child Lock"],"8a90735a-3263-4512-bbf1-3b2e7712a0a6":["Red","Black"],"f2f66954-fc3a-42f1-a1ba-a0eb7d1dfc58":["3 Cu. Ft."]}},{"products":[{"uuid":"7e2e6446-a890-45a3-88c4-9063dfba92c8","name":"test4 6 Cu. Ft. Capacity Front Load Washer Graphite Silver ","modelNumber":"test4 6 Cu. Ft.","badge":"none","price":1199.0,"image":"/.imaging/default/dam/us/product/MLH52S7AGS-5.2-FL-Washer-Dryer-Stacked-1.jpg/jcr:content.jpg","link":"/product/Laundry/Washers/d-test4-6-Cu.-Ft.-Capacity-Front-Load-Washer-Graphite-Silver-0","teaserFeatures":[],"color":"#2D2926"}],"colors":[{"uuid":"514fb411-55fb-4c23-82e2-e633e741897a","name":"Black","value":"2D2926"}],"filter":{"92596732-a0ef-47aa-96c4-dd49d4715bfa":["Automatic Load Sensing"],"8a90735a-3263-4512-bbf1-3b2e7712a0a6":["Gold","White","Black"],"f2f66954-fc3a-42f1-a1ba-a0eb7d1dfc58":["6 Cu. Ft."]}},{"products":[{"uuid":"c96aca6b-478f-4de4-a0e3-565862757835","name":"test4 6 Cu. Ft. Capacity Front Load Washer Graphite Silver ","modelNumber":"test4 6 Cu. Ft.","badge":"none","price":1199.0,"image":"/.imaging/default/dam/us/product/MLH52S7AGS-5.2-FL-Washer-Dryer-Stacked-1.jpg/jcr:content.jpg","link":"/product/Laundry/Washers/d-test4-6-Cu.-Ft.-Capacity-Front-Load-Washer-Graphite-Silver-1","teaserFeatures":[],"color":"#2D2926"}],"colors":[{"uuid":"514fb411-55fb-4c23-82e2-e633e741897a","name":"Black","value":"2D2926"}],"filter":{"92596732-a0ef-47aa-96c4-dd49d4715bfa":["Automatic Load Sensing"],"8a90735a-3263-4512-bbf1-3b2e7712a0a6":["Gold","White","Black"],"f2f66954-fc3a-42f1-a1ba-a0eb7d1dfc58":["6 Cu. Ft."]}},{"products":[{"uuid":"38e903ce-4d19-4ca3-882d-fab23b97bbbb","name":"test4 6 Cu. Ft. Capacity Front Load Washer Graphite Silver ","modelNumber":"test4 6 Cu. Ft.","badge":"none","price":1199.0,"image":"/.imaging/default/dam/us/product/MLH52S7AGS-5.2-FL-Washer-Dryer-Stacked-1.jpg/jcr:content.jpg","link":"/product/Laundry/Washers/d-test4-6-Cu.-Ft.-Capacity-Front-Load-Washer-Graphite-Silver-","teaserFeatures":[],"color":"#2D2926"}],"colors":[{"uuid":"514fb411-55fb-4c23-82e2-e633e741897a","name":"Black","value":"2D2926"}],"filter":{"92596732-a0ef-47aa-96c4-dd49d4715bfa":["Automatic Load Sensing"],"8a90735a-3263-4512-bbf1-3b2e7712a0a6":["Gold","White","Black"],"f2f66954-fc3a-42f1-a1ba-a0eb7d1dfc58":["6 Cu. Ft."]}},{"products":[{"uuid":"4cc0e8d7-c962-427f-9860-dd56da1f731f","name":"test4 6 Cu. Ft. Capacity Front Load Washer Graphite Silver ","modelNumber":"test4 6 Cu. Ft.","badge":"none","price":1199.0,"image":"/.imaging/default/dam/us/product/MLH52S7AGS-5.2-FL-Washer-Dryer-Stacked-1.jpg/jcr:content.jpg","link":"/product/Laundry/Washers/d-test4-6-Cu.-Ft.-Capacity-Front-Load-Washer-Graphite-Silver-3","teaserFeatures":[],"color":"#2D2926"}],"colors":[{"uuid":"514fb411-55fb-4c23-82e2-e633e741897a","name":"Black","value":"2D2926"}],"filter":{"92596732-a0ef-47aa-96c4-dd49d4715bfa":["Automatic Load Sensing"],"8a90735a-3263-4512-bbf1-3b2e7712a0a6":["Gold","White","Black"],"f2f66954-fc3a-42f1-a1ba-a0eb7d1dfc58":["6 Cu. Ft."]}},{"products":[{"uuid":"a8604dac-917c-489c-a714-1d99313ef4f4","name":"test4 6 Cu. Ft. Capacity Front Load Washer Graphite Silver ","modelNumber":"test4 6 Cu. Ft.","badge":"none","price":1199.0,"image":"/.imaging/default/dam/us/product/MLH52S7AGS-5.2-FL-Washer-Dryer-Stacked-1.jpg/jcr:content.jpg","link":"/product/Laundry/Washers/d-test4-6-Cu.-Ft.-Capacity-Front-Load-Washer-Graphite-Silver-2","teaserFeatures":[],"color":"#2D2926"}],"colors":[{"uuid":"514fb411-55fb-4c23-82e2-e633e741897a","name":"Black","value":"2D2926"}],"filter":{"92596732-a0ef-47aa-96c4-dd49d4715bfa":["Automatic Load Sensing"],"8a90735a-3263-4512-bbf1-3b2e7712a0a6":["Gold","White","Black"],"f2f66954-fc3a-42f1-a1ba-a0eb7d1dfc58":["6 Cu. Ft."]}}], })'>
+      <div class="container-medium">
+        @@include("section-title.html", {"title" : "Shop Washers"})
+        <div class="filter-toolbar">
+          <form class="filter-options">
+            <div class="form-group" v-for="(item, key) in filterConfiguration">
+              <select
+                      ref="filterSelect"
+                      v-model="filterParams[key].filterParamsData"
+                      @change="setFirstPage"
+                      multiple
+                      :placeholder="item.label"
+                      data-jcf='{
+                                "wrapNative": false,
+                                "wrapNativeOnMobile": false,
+                                "useCustomScroll": true,
+                                "multipleCompactStyle": true}'>
+                <option  :selected="filterParams[key].filterParamsData.indexOf (option) != -1" :value="option" v-for="(option, index) in item.options">{{option}}</option>
+              </select>
+            </div>
+          </form>
+          <div class="active-filters-holder">
+            <a @click.prevent="clearFilter" href="#" class="clear-filter">Clear filter</a>
+            <div class="filters">
+              <div class="item" v-for="(param, index) in filterParamsConverted" :key="index">
+                <span class="category">{{param.label}}:</span>
+                <span class="type">{{param.value}}</span>
+                <a href="#" @click.prevent="clearSingleFilter(param.index, param.value)" class="cross">cross</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="sorter-holder">
+          <div class="sorted-qty">
+            <span>{{activeItemLength()}} of {{filteredItemsLength()}}</span>
+          </div>
+          <form class="sort-form">
+            <span class="label">Sort by</span>
+            <div class="form-group">
+              <select placeholder="Sort by" @change="setFirstPage" v-model="sortData">
+                <option :value="{sortMin: true, sortBy: 'price'}">Price min/max</option>
+                <option :value="{sortMin: false, sortBy: 'price'}">Price max/min</option>
+                <option :value="{sortMin: true, sortBy: 'name'}">Name a/z</option>
+                <option :value="{sortMin: false, sortBy: 'name'}">Name z/a</option>
+              </select>
+            </div>
+          </form>
+        </div>
+        <div class="pagination-block">
+          <div class="pagination-block__page products-listing" v-for="(item, index) in settings.arrayData"
+               v-if="item.active" :key="index">
+            <div class="product" v-for="itemSub in item">
+              <div class="product-color-item" v-for="(product, index) in itemSub.products" :key="index"
+                   :class="{'active': index == 0}">
+                <div class="image-holder">
+                  <img :src="product.image" :alt="product.name">
+                  <div class="image-hover">
+                    <a :href="product.link" class="button hollow">View Details</a>
+                  </div>
+                </div>
+                <div class="description-holder">
+                  <h2 class="h6">{{product.name}}</h2>
+                  <div class="model">
+                    Model number: <span class="code">{{product.modelNumber}}</span>
+                  </div>
+                  <div v-if="product.reviewsAmount" class="reviews-holder">
+                    <div class="rating-style">
+                      <div class="star-holder" v-for="(i, index) in 5">
+                        <div class="star">{{index}}
+                        </div>
+                        <span class="progress-bar" :style="{width: addRatingWidth(product.rating, index)}">pb</span>
+                      </div>
+                    </div>
+                    <span class="reviews-qty"><span>{{product.reviewsAmount}}</span> Reviews</span>
+                  </div>
+                  <div class="short-spec">
+                    <!--.msrp-holder is optional block-->
+                    <div class="msrp-holder" v-if="!!product.price">
+                      <span>MSRP </span><span class="msrp">${{product.price}}</span>
+                    </div>
+                    <div class="color-holder" v-if="itemSub.products.length > 0 && hasColor(itemSub.products)">
+                      <span>Color</span>
+                      <div class="variety">
+                      <span v-for="productsForColor in itemSub.products" class="item"
+                            :style="colorStyle(productsForColor)"> </span>
+                      </div>
+                    </div>
+                  </div>
+                  <ul class="property">
+                    <li v-for="feature in product.teaserFeatures">{{feature}}</li>
+                  </ul>
+                  <div class="action">
+                    <a :href="product.link" class="button">Shop now</a>
+                    <div class="form-group checkbox-group" :disabled="compareMax(product.uuid)">
+                      <input :value="product" type="checkbox" :id="product.uuid+index" v-model="compareProducts">
+                      <label :for="product.uuid+index"><span>Compare</span></label>
+                    </div>
+                  </div>
+                </div>
+                <span
+                        v-if="product.badge !== 'none'"
+                        :class="{'product-new': product.badge == 'new', 'product-sale': product.badge == 'sale'}"
+                >{{product.badge}}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div v-if="showPagination" class="pagination">
+          <ul class="wp-pagenavi">
+            <li class="pagination-list__li">
+              <span
+                      v-if="def.arrowsSettings.hideArrows != true"
+                      @click="[
+                  switch_page(curIndex - 1)
+                ]"
+                      class="pagination-list__button pagination-list__arrow pagination-list__arrow_prev"
+                      :class="[
+                  classArrowPrev()
+                ]">prev </span>
+            </li>
+            <template v-for="(item, index) in settings.arrayData">
+              <li class="pagination-list__li" v-if="pagination(index).li" :key="index">
+                <template v-if="pagination(index).button">
+                  <span
+                          :class="[
+                {'pagination-list__button_page_active': curIndex === index}
+              ]"
+                          @click="[
+                switch_page(index)
+              ]"
+                          class="pagination-list__button pagination-list__button_page">{{ index + 1 }}
+                  </span>
+                </template>
+                <template v-else>
+                  <div class="pagination-list__button_dots">
+                    ...
+                  </div>
+                </template>
+              </li>
+            </template>
+            <li class="pagination-list__li">
+              <span
+                      v-if="def.arrowsSettings.hideArrows != true"
+                      @click="[switch_page(curIndex + 1)]"
+                      class="pagination-list__button pagination-list__arrow pagination-list__arrow_next"
+                      :class="[classArrowNext()]"
+              >next</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="compare-popup" :class="{'active': isActiveCompare, 'hidden-popup': isHidePopup}">
+        <div class="hide-btn" @click="hideShowComparePopup"></div>
+        <div class="holder">
+          <header>
+            <h4>Compare Products</h4>
+            <span class="clear-compare" @click="clearAllCompareProducts">Clear All Items</span>
+            <div class="mobile">
+              {{compareProductsLength}} {{productsWord}} in compare <span class="mobile-clear"  @click="clearAllCompareProducts">Clear</span>
+            </div>
+            <a :href="compareLink" class="button">Compare</a>
+          </header>
+          <ul class="compare-products">
+            <li v-for="item in compareProducts">
+              <div class="remove" @click="removeCompareProduct(item.uuid)"></div>
+              <a :href="item.link" target="_blank" class="wrapper-in">
+                <img :src="item.image" alt=""/>
+                <p>{{item.name}}</p>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    @@include("help-info.html")
+  </main>
+
+  @@include("footer.html")
+</div>
+@@include("scripts.html")
+<script src="https://cdn.jsdelivr.net/npm/lodash@4.17.11/lodash.min.js"></script>
+<!--<script src="https://unpkg.com/vue"></script>-->
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.10"></script>
+<script src="../../vue-es6.js"></script>
+</body>
+</html>

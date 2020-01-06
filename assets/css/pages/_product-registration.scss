@@ -1,0 +1,154 @@
+.registration {
+    margin-top: 40px;
+    margin-bottom: 40px;
+    position: relative;
+    z-index: 10;
+    @include media('>=desktop') {
+        margin-top: 80px;
+        margin-bottom: 100px;
+     
+    }
+    @include media('>=large-desktop') {
+        margin-top: 105px;
+        margin-bottom: 140px;
+    }
+    .container {
+        max-width: 1330px;
+    }
+    .holder {
+        @include media('>=desktop') {
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+
+    .about-registration {
+        text-align: center;
+        @include media('>=desktop') {
+            max-width: 525px;
+            width: 100%;
+            margin-right: 140px;
+            text-align: left;
+        }
+        @include media('>=large-desktop') {
+            margin-right: 170px;
+        }
+        ul {
+            margin-top: 40px;
+            li {
+                margin-top: 40px;
+                @include media('>=desktop') {
+                    display: flex;
+                }
+                &:first-child {
+                    margin-top: 0;
+                }
+                p {
+                    margin-bottom: 0;
+                }
+            }
+            .icon {
+                max-height: 60px;
+                max-width: 55px;
+                width: 100%;
+                margin: 0 auto 15px;
+                flex-shrink: 0;
+                @include media('>=desktop') {
+                    margin: 0 20px 0 0;
+                }
+                img {
+                    max-width: 100%;
+                }
+            }
+        }
+    }
+}
+
+.form-registration {
+    box-shadow: 0 0 17px rgba(0, 0, 0, 0.08);
+    background-color: $white;
+    padding: 25px;
+    max-width: 600px;
+    width: 100%;
+    margin: 30px auto;
+    @include media('>=tablet') {
+        padding: 55px 60px 40px;
+        height: 100%;
+    }
+    @include media('>=desktop') {
+        margin: 0;
+        max-width: 440px;
+    }
+    @include media('>=medium-desktop') {
+        max-width: 600px;
+
+    }
+    .form-wrapper {
+        @include media('>=medium-desktop') {
+            display: flex;
+        }
+        .form-group {
+            @include media('>=medium-desktop') {
+                flex-basis: calc(50% - 10px);
+                &:last-child {
+                    margin-left: 20px;
+                }
+            }
+        }
+    }
+    .form-group {
+        .error-label {
+            bottom: 0;
+            top: auto;
+        }
+        input {
+            margin-bottom: 20px;
+        }
+        label {
+            margin-bottom: 10px;
+            font-size: 12px;
+            font-weight: 700;
+            line-height: 20px;
+            margin-left: 10px;
+            span {
+                color: $darkblue;
+            }
+        }
+    }
+    .button-block {
+        margin-top: 30px;
+        .button {
+            width: 100%;
+        }
+        .success {
+            text-align: center;
+            display: block;
+            color: #7ac426;
+            font-size: 18px;
+            font-weight: 700;
+            line-height: 26px;
+        }
+        .error {
+            @extend .success;
+            color: $red;
+        }
+    }
+    p {
+        margin-bottom: 0;
+        font-size: 14px;
+        font-weight: 300;
+        margin-top: 30px;
+        color: #4d4d4d;
+        span {
+            color: $blue;
+        }
+    }
+}
+
+.intro-slider + .registration {
+    .form-registration {
+        @include media('>=desktop') {
+            margin-top: -545px;
+        }
+    }
+}

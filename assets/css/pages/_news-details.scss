@@ -1,0 +1,197 @@
+.text-content {
+    .video {
+        padding-left: 0;
+        padding-right: 0;
+        margin-bottom: 40px;
+        .plyr__video-wrapper {
+            padding-bottom: 56%;
+        }
+        & > span {
+            color: $grey;
+            margin-top: 25px;
+            display: inline-block;
+        }
+    }
+    .anchor-list {
+        li {
+            &:before {
+                font-weight: 300;
+            }
+        }
+    }
+}
+
+.news-details {
+    margin-top: 40px;
+    margin-bottom: 40px;
+    @include media('>=desktop') {
+        margin-top: 80px;
+    }
+    @include media('>=large-desktop') {
+        margin-top: 115px;
+    }
+    .container {
+        & > .holder {
+            position: relative;
+            @include media('>=desktop') {
+                display: flex;
+                flex-wrap: wrap;
+            }
+        }
+        @include media('>=desktop') {
+            max-width: 1400px;
+        }
+        @include media('>=large-desktop') {
+            max-width: 1560px;
+        }
+    }
+
+    .text-content {
+        width: 100%;
+        @include media('>=desktop') {
+            max-width: 700px;
+            margin-right: 80px;
+            flex-shrink: 0;
+        }
+        @include media('>=medium-desktop') {
+            max-width: 840px;
+
+        }
+        @include media('>=large-desktop') {
+            max-width: 920px;
+            margin-right: 145px;
+        }
+
+    }
+    .news-sidebar {
+        max-width: 450px;
+        width: 100%;
+        margin: 30px auto 0;
+        @include media('>=desktop') {
+            position: absolute;
+            top: 0;
+            right: 0;
+            transition: transform $fast-transition;
+            @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+                position: static !important;
+            }
+        }
+
+        @include media('>=medium-desktop') {
+            max-width: 450px;
+        }
+        @include media('>=large-desktop') {
+        }
+
+        @include media('>=desktop') {
+            margin: 0;
+        }
+        .form-group input {
+            text-align: center;
+        }
+        &.fixed{
+            @include media('>=desktop') {
+                position: fixed;
+                right: 0;
+                top: 140px;
+            }
+        }
+        &.bottom{
+            @include media('>=desktop') {
+                top: auto;
+                position: absolute;
+                right: 0;
+                bottom: 0;
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    h4, .h4 {
+        &:first-child {
+            margin-top: 0;
+        }
+    }
+    .share-article {
+        margin-top: 30px;
+        @include media('>=tablet') {
+            display: flex;
+            align-items: center;
+            margin-top: 0;
+            justify-content: space-between;
+
+        }
+
+        & > span {
+            margin-right: 25px;
+            margin-top: 20px;
+        }
+        .social-links{
+            flex-shrink: 0;
+        }
+        li {
+            width: 70px;
+            height: 70px;
+            box-shadow: 0 0 17px rgba(0, 0, 0, 0.08);
+            background-color: $white;
+            margin-right: 15px;
+            position: relative;
+            margin-top: 20px;
+            a {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                height: auto;
+                display: flex;
+                svg {
+                    fill: $blue;
+                    opacity: 1;
+                    &:hover {
+                        fill: #0B75F0
+                    }
+                }
+            }
+            &:last-child {
+                margin-right: 0;
+            }
+
+        }
+
+    }
+}
+
+.subscribe-sidebar {
+    position: relative;
+    padding: 30px 30px 30px;
+    text-align: center;
+    box-shadow: 0 0 17px rgba(0, 0, 0, 0.08);
+    background-color: $white;
+    background-image: url("../images/subscribe-pattern.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    @include media('>=desktop') {
+        padding: 50px 50px 58px;
+    }
+    & > .h3 {
+        margin-bottom: 40px;
+    }
+    .button {
+        width: 100%;
+    }
+    input {
+        margin-bottom: 10px;
+        text-align: center;
+    }
+}
+
+.related-news {
+    margin-top: 40px;
+    @include media('>=desktop') {
+        margin-top: 70px;
+    }
+    @include media('>=large-desktop') {
+        margin-top: 100px;
+    }
+}

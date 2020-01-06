@@ -1,0 +1,210 @@
+.compare-popup{
+  z-index: 10;
+  position: fixed;
+  background-color: $white;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  box-shadow: 0 0 17px rgba(0, 0, 0, 0.08);
+  padding: 7px 15px;
+  transition: transform .5s, margin-top .5s;
+  transform: translateY(150%);
+  transform-origin: 0 100% 0;
+  @include media('>=tablet') {
+    padding: 12px 14px;
+  }
+  @include media('>=desktop') {
+    padding: 18px;
+  }
+  &.active{
+    transform: translateY(0);
+  }
+  &.active.hidden-popup{
+    transform: translateY(170px);
+    @include media('>=tablet-landscape') {
+      transform: translateY(195px);
+    }
+    @include media('>=desktop') {
+      transform: translateY(210px);
+    }
+    @include media('>=large-desktop') {
+      transform: translateY(186px);
+    }
+    .hide-btn:after{
+      transform: translate(-50%, -50%) rotate(-135deg);
+      margin-top: 2px;
+    }
+    header{
+      margin-bottom: 100px;
+
+    }
+  }
+  .hide-btn{
+    @include media('<tablet-landscape') {
+      display: none;
+    }
+    position: absolute;
+    left: 50%;
+    top: 0;
+    transform: translate(-50%, -50%);
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background-color: $white;
+    box-shadow: 0 0 14px rgba(0, 0, 0, 0.08);
+    cursor: pointer;
+    &:after{
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) rotate(45deg);
+      border-bottom: 2px solid $blue;
+      border-right: 2px solid $blue;
+      width: 10px;
+      height: 10px;
+      margin-top: -2px;
+      transition: transform .5s, margin .5s;
+    }
+  }
+  .holder{
+    max-width: 1472px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: margin .5s;
+    @include media('>=tablet-landscape') {
+      margin-bottom: 12px;
+      justify-content: flex-end;
+    }
+    @include media('>=tablet-landscape') {
+      margin-bottom: 27px;
+    }
+    .mobile{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      @include media('>=tablet-landscape') {
+        display: none;
+      }
+    }
+    h4{
+      @include media('<tablet-landscape') {
+        display: none;
+      }
+    }
+    .mobile-clear{
+      color: $darkblack;
+      font-weight: 700;
+      cursor: pointer;
+      margin-left: 3px;
+    }
+    .clear-compare{
+      margin: 0 15px;
+      color: $darkblack;
+      font: 700 14px $main-ff;
+      cursor: pointer;
+      &:hover{
+        color: $blue;
+      }
+      @include media('<tablet-landscape') {
+        display: none;
+      }
+    }
+    .button{
+      margin: 0 15px;
+      height: 40px;
+      padding-top: 8px;
+      padding-bottom: 8px;
+      @include media('<tablet-landscape') {
+        padding: 8px 18px;
+        margin: 0 10px;
+      }
+    }
+    > * {
+      margin-bottom: 0;
+      flex: auto auto;
+      &:first-child{
+        flex: 1 auto;
+      }
+      &:last-child{
+        margin-right: 0;
+      }
+      @include media('<tablet-landscape') {
+        flex: 1 auto;
+      }
+    }
+  }
+  .compare-products{
+    display: none;
+    @include media('>=tablet-landscape') {
+      display: flex;
+      margin: 0 -15px;
+    }
+    li{
+      position: relative;
+      width: calc(25% - 30px);
+      padding: 7px;
+      box-shadow: 0 0 17px rgba(0, 0, 0, 0.08);
+      margin: 0 15px;
+      @include media('>=tablet-landscape') {
+        min-height: 94px;
+      }
+      @include media('>=desktop') {
+        min-height: 110px;
+      }
+      @include media('>=large-desktop') {
+        min-height: 86px;
+      }
+    }
+    .wrapper-in{
+      display: flex;
+      align-items: center;
+      height: 100%;
+      min-height: 66px;
+    }
+    img{
+      max-width: 66px;
+      margin-right: 5px;
+      display: block;
+      @include media('>=tablet-landscape') {
+        margin-right: 7px;
+      }
+      @include media('>=desktop') {
+        margin-right: 15px;
+      }
+    }
+    p{
+      overflow: hidden;
+      margin-bottom: 0;
+    }
+    .remove{
+      width: 25px;
+      height: 25px;
+      border-radius: 50%;
+      position: absolute;
+      top: 0;
+      right: 0;
+      transform: translate(50%, -50%);
+      background-color: $blue;
+      cursor: pointer;
+      &:after, &:before{
+        content: '';
+        position: absolute;
+        width: 1px;
+        height: 11px;
+        background-color: $white;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) rotate(45deg);
+      }
+      &:after{
+        transform: translate(-50%, -50%) rotate(-45deg);
+      }
+    }
+  }
+}

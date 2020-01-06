@@ -1,0 +1,570 @@
+.banner {
+    display: block;
+    position: relative;
+    color: $white;
+    text-align: center;
+    @include media(">=desktop") {
+        text-align: left;
+    }
+    .content-holder {
+        display: flex;
+        justify-content: center;
+        position: relative;
+        z-index: 10;
+        height: 100%;
+        width: 100%;
+        padding: 80px 20px;
+        background-position: center center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        @include media(">=desktop") {
+            padding: 90px 125px;
+        }
+        @include media(">=large-desktop") {
+            padding: 90px 195px;
+        }
+        &:before {
+            content: '';
+            position: absolute;
+            z-index: 5;
+            width: 100%;
+            height: 100%;
+            left: 0;
+            top: 0;
+            background-color: rgba($black, .55);
+        }
+    }
+
+    .text-holder {
+        display: block;
+        position: relative;
+        z-index: 10;
+        max-width: 400px;
+        width: 100%;
+        @include media(">=desktop") {
+            max-width: 570px;
+            display: flex;
+            flex-direction: column;
+        }
+        @include media(">=large-desktop") {
+            max-width: 610px;
+        }
+        .homepage & {
+            @include media(">=large-desktop") {
+                max-width: 720px;
+            }
+        }
+        button, .button {
+            @include media(">=desktop") {
+                align-self: flex-start;
+            }
+        }
+        span {
+            background: transparent;
+            font-weight: $bold;
+            color: $lightblue;
+        }
+    }
+
+    h1, h2, h3, h4, h5, h6,
+    .h1, .h2, .h3, .h4, .h5, .h6 {
+        color: $white;
+        margin-bottom: 8px;
+        @include media("<desktop") {
+            text-align: center !important;
+        }
+        &:last-child {
+            margin-bottom: 0;
+        }
+        & + button, & + .button {
+            margin-top: 32px;
+            @include media(">=desktop") {
+                margin-top: 41px;
+            }
+        }
+        & + p {
+            margin-top: 8px;
+            @include media(">=desktop") {
+                margin-top: 22px;
+            }
+            @include media(">=large-desktop") {
+                margin-top: 30px;
+            }
+        }
+    }
+    p {
+        font-size: 16px;
+        line-height: 24px;
+        @include media("<desktop") {
+            text-align: center !important;
+        }
+        @include media(">=desktop") {
+            font-size: 18px;
+            line-height: 26px;
+        }
+        @include media(">=large-desktop") {
+            font-size: 22px;
+            line-height: 30px;
+        }
+        &:last-child, &:last-of-type {
+            margin-bottom: 0;
+        }
+    }
+    i {
+        font-size: 14px;
+        line-height: 22px;
+        margin-bottom: 15px;
+        font-weight: 300;
+        font-style: normal;
+        color: rgba($white, .8);
+        @include media("<desktop") {
+            text-align: center !important;
+        }
+        @include media(">=desktop") {
+            font-size: 16px;
+            line-height: 24px;
+        }
+        @include media(">=large-desktop") {
+            font-size: 18px;
+            line-height: 26px;
+        }
+    }
+    button, .button {
+        width: auto;
+        margin-top: 27px;
+        @include media(">=desktop") {
+            margin-top: 35px;
+        }
+        @include media(">=large-desktop") {
+            margin-top: 40px;
+        }
+    }
+
+    //Content-position
+    &.top {
+        &-left {
+            .content-holder {
+                @include media(">=desktop") {
+                    justify-content: flex-start;
+                }
+            }
+        }
+        &-center {
+            .content-holder {
+                @include media(">=desktop") {
+                    justify-content: center;
+                }
+            }
+        }
+        &-right {
+            .content-holder {
+                @include media(">=desktop") {
+                    justify-content: flex-end;
+                }
+            }
+        }
+    }
+    &.middle {
+        &-left {
+            .content-holder {
+                align-items: center;
+                @include media(">=desktop") {
+                    justify-content: flex-start;
+                }
+            }
+            .text-holder {
+                padding-top: 80px;
+                @include media(">=desktop") {
+                    padding-top: 41px;
+                }
+                @include media(">=large-desktop") {
+                    padding-top: 0;
+                }
+            }
+        }
+        &-center {
+            .content-holder {
+                align-items: center;
+                @include media(">=desktop") {
+                    justify-content: center;
+                }
+            }
+            .text-holder {
+                padding-top: 80px;
+                @include media(">=desktop") {
+                    padding-top: 41px;
+                }
+                @include media(">=large-desktop") {
+                    padding-top: 0;
+                }
+            }
+        }
+        &-right {
+            .content-holder {
+                align-items: center;
+                @include media(">=desktop") {
+                    justify-content: flex-end;
+                }
+            }
+            .text-holder {
+                padding-top: 80px;
+                @include media(">=desktop") {
+                    padding-top: 41px;
+                }
+                @include media(">=large-desktop") {
+                    padding-top: 0;
+                }
+            }
+        }
+    }
+    &.bottom {
+        &-left {
+            .content-holder {
+                align-items: flex-end;
+                @include media(">=desktop") {
+                    justify-content: flex-start;
+                }
+            }
+        }
+        &-center {
+            .content-holder {
+                align-items: flex-end;
+                @include media(">=desktop") {
+                    justify-content: center;
+                }
+            }
+        }
+        &-right {
+            .content-holder {
+                align-items: flex-end;
+                @include media(">=desktop") {
+                    justify-content: flex-end;
+                }
+            }
+        }
+    }
+
+    //Check is it intro banner
+    &.intro {
+        body:not(.homepage) & {
+            @include media(">=desktop") {
+                margin-top: 119px;
+            }
+            @include media(">=large-desktop") {
+                margin-top: 116px;
+            }
+        }
+
+        .content-holder {
+            padding: 95px 20px;
+            background-size: cover;
+            @include media(">=desktop") {
+                padding: 116px 125px;
+            }
+            @include media(">=large-desktop") {
+                padding: 116px 195px;
+            }
+        }
+        &.middle {
+            &-left {
+                .content-holder {
+                    @include media(">=desktop") {
+                        //padding-bottom: 0;
+                    }
+                    .homepage & {
+                        @include media(">=desktop") {
+                            padding-bottom: 90px;
+                        }
+                    }
+                }
+            }
+            &-center {
+                .content-holder {
+                    align-items: center;
+                    @include media(">=desktop") {
+                        //padding-bottom: 0;
+                    }
+                    .homepage & {
+                        @include media(">=desktop") {
+                            padding-bottom: 90px;
+                        }
+                    }
+                }
+            }
+            &-right {
+                .content-holder {
+                    align-items: center;
+                    @include media(">=desktop") {
+                        //padding-bottom: 0;
+                    }
+                    .homepage & {
+                        @include media(">=desktop") {
+                            padding-bottom: 90px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    //Text-align
+    &.text-left {
+        @include media(">=desktop") {
+            //text-align: left;
+        }
+        .text-holder {
+            button, .button {
+                @include media(">=desktop") {
+                    align-self: flex-start;
+                }
+            }
+        }
+    }
+    &.text-center {
+        @include media(">=desktop") {
+            //text-align: center;
+        }
+        .text-holder {
+            button, .button {
+                @include media(">=desktop") {
+                    align-self: center;
+                }
+            }
+        }
+    }
+    &.text-right {
+        @include media(">=desktop") {
+            //text-align: right;
+        }
+        .text-holder {
+            button, .button {
+                @include media(">=desktop") {
+                    align-self: flex-end;
+                }
+            }
+        }
+    }
+
+    //Banner height
+    &.full-height {
+        height: calc(100vh - 50px);
+        min-height: 518px;
+        @include media(">=desktop") {
+            height: calc(100vh - 75px);
+            min-height: 725px;
+        }
+        @include media(">=large-desktop") {
+            min-height: 885px;
+        }
+        &.intro {
+            body:not(.homepage) & {
+                @include media(">=desktop") {
+                    height: calc(100vh - 194px);
+                }
+                @include media(">=large-desktop") {
+                    height: calc(100vh - 191px);
+                }
+            }
+        }
+    }
+    &.medium-height {
+        height: 540px;
+        min-height: 500px;
+        @include media(">=desktop") {
+            height: 600px;
+            min-height: 550px;
+        }
+        @include media(">=large-desktop") {
+            height: 740px;
+            min-height: 600px
+        }
+        &.intro {
+            height: calc(100vh - 50px);
+            @include media(">=desktop") {
+                height: 600px;
+            }
+            @include media(">=large-desktop") {
+                height: 740px;
+            }
+        }
+    }
+    &.small-height {
+        height: 540px;
+        min-height: 500px;
+        @include media(">=desktop") {
+            height: 600px;
+            min-height: 550px
+        }
+        @include media(">=large-desktop") {
+            height: 660px;
+        }
+        &.intro {
+            height: calc(100vh - 50px);
+            @include media(">=desktop") {
+                height: 600px;
+            }
+            @include media(">=large-desktop") {
+                height: 660px;
+            }
+        }
+    }
+
+    //Hide overlay
+    &.no-overlay {
+        .content-holder {
+            &:before {
+                background: transparent;
+            }
+        }
+    }
+
+    //Made text black
+    &.black-text {
+        .content-holder {
+            color: $darkblack;
+        }
+        h1, h2, h3, h4, h5, h6,
+        .h1, .h2, .h3, .h4, .h5, .h6 {
+            color: $darkblack;
+        }
+    }
+
+    //Emulate img
+    &.contain {
+        .content-holder {
+            @include media(">=tablet") {
+                background-size: contain;
+            }
+        }
+    }
+    .watermark {
+        position: absolute;
+        top: 35px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 112px;
+        height: auto;
+        max-height: 45px;
+        z-index: 10;
+        @include media(">=desktop") {
+            width: 150px;
+            max-height: 60px;
+            transform: translateX(0);
+            top: 50px;
+            left: auto;
+            right: 61px;
+        }
+        @include media(">=large-desktop") {
+            width: 194px;
+            max-height: 78px;
+            top: 60px;
+            right: 122px;
+        }
+    }
+}
+
+.intro-slider {
+    .slick-dots {
+        position: absolute;
+        z-index: 20;
+        bottom: 25px;
+        left: 50%;
+        transform: translateX(-50%);
+        @include media(">=desktop") {
+            transform: translateX(0);
+            left: 125px;
+            bottom: 53px;
+        }
+        @include media(">=large-desktop") {
+            left: 195px;
+        }
+        button, .button {
+            background: $white;
+        }
+        li {
+            @include media(">=desktop") {
+                margin: 0;
+            }
+            & + li {
+                @include media(">=desktop") {
+                    margin-left: 30px;
+                }
+            }
+        }
+        .slick-active {
+            button, .button {
+                border: 1px solid $white;
+            }
+        }
+    }
+    .slick-arrow {
+        position: absolute;
+        z-index: 20;
+        right: 55px;
+        bottom: 40px;
+        margin: 0;
+        background-color: transparent;
+        border: 1px solid $white;
+        min-width: 37px;
+        min-height: 37px;
+        width: 37px;
+        height: 37px;
+        @include media(">=large-desktop") {
+            right: 100px;
+        }
+        &.slick-prev {
+            transform: translateX(-62px);
+        }
+        &.slick-next {
+            transform: rotate(180deg);
+        }
+        .no-touch & {
+            &:hover {
+                background-color: $white;
+                &::before,
+                &::after {
+                    background-color: $lightblack;
+                }
+            }
+        }
+
+        &::before,
+        &::after {
+            background-color: $white;
+        }
+    }
+}
+
+.featured-banners {
+    margin: 40px 0;
+    @include media(">=desktop") {
+        margin: 60px 0;
+    }
+
+    @include media(">=large-desktop") {
+        margin: 100px 0;
+    }
+    .section-title {
+        margin-bottom: 50px;
+    }
+    .banner {
+        margin-bottom: 20px;
+    }
+    .row {
+        @include media(">=desktop") {
+            display: flex;
+            justify-content: space-between;
+        }
+        .banner {
+            @include media(">=desktop") {
+                margin-bottom: 0;
+                width: calc(50% - 10px);
+            }
+        }
+    }
+    .content-holder {
+        @include media(">=desktop") {
+            padding: 90px 125px;
+        }
+    }
+}

@@ -1,0 +1,371 @@
+.social-share {
+    position: relative;
+    max-width: 1920px;
+    width: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin: 40px auto 40px;
+    @include media('>=desktop') {
+        margin: 80px auto 60px;
+        padding-left: 0;
+        padding-right: 0;
+    }
+    @include media('>=large-desktop') {
+
+        margin: 100px auto 80px;
+    }
+    .modal-link {
+        display: none;
+        @include media('>=desktop') {
+            display: inline-block;
+        }
+    }
+    .modal-block {
+        opacity: 1;
+        visibility: visible;
+        position: static;
+        background-color: transparent;
+        max-height: none;
+        max-width: none;
+        transform: none;
+        .close {
+            display: none;
+            @include media('>=desktop') {
+                display: block;
+            }
+        }
+        @include media('>=desktop') {
+            opacity: 0;
+            visibility: hidden;
+            background-color: $white;
+            position: fixed;
+            transform: translate(-50%, -50%);
+        }
+    }
+    .slick-dots {
+        justify-content: center;
+        margin-top: 23px;
+    }
+    .slick-list {
+        box-shadow: 0 0 18px 10px rgba(0, 0, 0, 0.04);
+        @include media('>=desktop') {
+            box-shadow: none;
+        }
+
+    }
+    .top-info {
+        padding-left: 15px;
+        padding-right: 15px;
+        @include media('>=desktop') {
+            padding-left: 0;
+            padding-right: 0;
+        }
+        .section-title{
+            @include media('>=desktop') {
+                padding: 15px 0;
+            }
+            @include media('>=medium-desktop') {
+                padding: 30px 0;
+            }
+        }
+        .modal-share {
+            display: none;
+            @include media('>=desktop') {
+                display: inline-block;
+            }
+        }
+        text-align: center;
+        @include media('>=desktop') {
+            position: absolute;
+            left: 0;
+            width: 26.772%;
+            height: 32%;
+            top: 1%;
+        }
+        @include media('>=medium-desktop') {
+            top: 3%;
+
+        }
+        p {
+            font-size: 14px;
+            max-width: 295px;
+            margin: 0 auto;
+            padding-top: 15px;
+            @include media('>=desktop') {
+                padding-top: 0px;
+            }
+            @include media('>=large-desktop') {
+                padding-top: 15px;
+            }
+        }
+        & > {
+            a {
+                margin-top: 15px;
+                margin-bottom: 0;
+                @include media('>=desktop') {
+                    margin-bottom: 24px;
+                }
+                @include media('>=large-desktop') {
+                    margin-top: 30px;
+                }
+            }
+        }
+
+    }
+    .social-share-list {
+        position: relative;
+
+        .item {
+
+            position: relative;
+            .pattern-share {
+                display: none;
+            }
+            .bg-image {
+                padding-top: 100%;
+                @include media('>=tablet') {
+                    padding-top: 60%;
+                }
+                @include media('>=desktop') {
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    left: 0;
+                    bottom: 0;
+                    padding-top: 0;
+                }
+            }
+            .hover-block {
+                background-color: $white;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+                transition: opacity $transition, transform $transition, visibility $transition;
+                @include media('>=desktop') {
+                    background-color: rgba($darkblue, 0);
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    left: 0;
+                    bottom: 0;
+                    transform: scale(0);
+                    visibility: hidden;
+                }
+                .holder {
+                    padding: 10px 15px 25px;
+                    text-align: center;
+                    color: $white;
+                    z-index: 2;
+                    width: 100%;
+                    @include media('>=desktop') {
+                        position: relative;
+                        padding: 20px 20px 20px;
+                    }
+                    @include media('>=large-desktop') {
+                        position: relative;
+                        padding: 20px 57px 20px;
+                    }
+                    .button {
+                        margin-top: 0;
+                        @include media('>=desktop') {
+                            background-color: $white;
+                            color: $black;
+                            margin-top: 30px;
+                            &:hover {
+                                background: rgba($white, .9);
+                            }
+                        }
+                        @include media('>=large-desktop') {
+                            margin-top: 60px;
+                        }
+                    }
+                    h3 {
+                        color: $black;
+                        font-size: 16px;
+                        line-height: 24px;
+                        font-weight: $bold;
+                        @include media('>=desktop') {
+                            color: $white;
+
+                            font-size: 24px;
+                            line-height: 28px;
+                            font-weight: $regular;
+
+                        }
+                        @include media('>=large-desktop') {
+                            font-size: 28px;
+                            line-height: 34px;
+                        }
+                    }
+                    p {
+                        margin-top: 5px;
+                        color: $black;
+                        font-size: 16px;
+                        @include media('>=desktop') {
+                            color: $white;
+                            margin-top: 15px;
+                        }
+                        @include media('>=large-desktop') {
+                            margin-top: 25px;
+                        }
+                    }
+                    .icon {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        right: 0;
+                        margin-top: 0;
+                        background-color: rgba($black, .6);
+                        padding: 9px 0;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        @include media('>=desktop') {
+                            position: static;
+                            margin-top: 25px;
+
+                            padding: 0;
+                            background-color: transparent;
+                        }
+                        svg {
+                            width: 17px;
+                            height: 17px;
+                            fill: $white;
+                        }
+                        span {
+                            margin-left: 15px;
+                            font-size: 16px;
+
+                        }
+                    }
+
+                }
+                .pattern-share {
+                    position: absolute;
+                    right: 0;
+
+                    bottom: 0;
+                    @include media('>=desktop') {
+                        right: 0;
+                        top: 0;
+                        bottom: 0;
+                    }
+                }
+            }
+            &:hover {
+                .hover-block {
+                    @include media('>=desktop') {
+                        background-color: rgba($darkblue, .8);
+                        visibility: visible;
+                        transform: scale(1);
+                    }
+                }
+            }
+
+            &.no-bg-image {
+                .holder {
+                    height: 350px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    flex-direction: column;
+                    p {
+                        color: $white;
+                        margin-bottom: 0;
+
+                    }
+                    @include media('>=desktop') {
+                        height: auto;
+                        display: block;
+                    }
+                }
+                .bg-image {
+                    display: none;
+                }
+                .hover-block {
+                    background-color: rgba($darkblue, 1);
+                    visibility: visible;
+                    transform: scale(1);
+                }
+                .pattern-share {
+                    display: block;
+                }
+            }
+
+            &:nth-child(2) {
+
+                @include media('>=desktop') {
+                    width: 26.772%;
+                    padding-top: 26.772%;
+                    position: absolute;
+
+                    left: 0;
+                    top: 34.5%;
+                }
+            }
+            &:nth-child(3) {
+                svg {
+                    width: 339px;
+                    height: 237px;
+                }
+                @include media('>=desktop') {
+
+                    width: 26.772%;
+                    padding-top: 12.441%;;
+
+                    position: absolute;
+                    left: 0;
+                    top: 79.5%;
+                }
+                @include media('>=large-desktop') {
+                    top: 80.1%;
+                }
+
+            }
+            &:nth-child(4) {
+
+                @include media('>=desktop') {
+                    width: 25.197%;
+                    padding-top: 25.197%;
+                    position: absolute;
+                    right: 46.4%;
+                    top: 0;
+                }
+            }
+            &:nth-child(5) {
+                svg {
+                    width: 635px;
+                    height: 480px;
+                }
+                @include media('>=desktop') {
+                    width: 44.882%;;
+                    padding-top: 25.197%;
+
+                    position: absolute;
+                    right: 0;
+                    top: 0;
+                }
+            }
+            &:nth-child(6) {
+                @include media('>=desktop') {
+                    width: 35.016%;
+                    padding-top: 35.4331%;
+                    position: absolute;
+                    top: 43.1%;
+                    right: 36.6%;
+                }
+            }
+            &:nth-child(7) {
+                @include media('>=desktop') {
+                    width: 35.016%;
+                    padding-top: 35.4331%;
+                    position: absolute;
+                    right: 0;
+                    top: 43.1%;
+                }
+            }
+        }
+    }
+
+}

@@ -1,0 +1,121 @@
+.datepicker-group {
+  position: relative;
+  .icon {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-image: url("../images/calendar.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    position: absolute;
+    right: 20px;
+    top: 45px;
+  }
+}
+
+.ui-datepicker {
+  display: none;
+  max-width: 280px;
+  width: 100%;
+  border-radius: 21px;
+  border: 1px solid #0099da;
+  background-color: #ffffff;
+  padding: 0 15px 15px;
+}
+
+.ui-datepicker-calendar {
+  width: 100%;
+  margin-bottom: 0;
+  th, td {
+    border: none;
+  }
+  thead {
+    span {
+      font-weight: 500;
+      font-size: 13px;
+    }
+  }
+  tbody {
+    td, tr {
+      text-align: center;
+    }
+    span, a {
+      font-size: 14px;
+      font-weight: 400;
+      width: 24px;
+      height: 24px;
+      display: inline-block;
+    }
+  }
+  .ui-state-hover {
+    width: 24px;
+    height: 24px;
+    border-radius: 12px;
+    background-color: rgba($darkblue, .15);
+    color: $darkblue !important;
+  }
+
+  .ui-state-active {
+    color: $white;
+    width: 24px;
+    height: 24px;
+    border-radius: 12px;
+    background-color: #0099da;
+    &.ui-state-hover {
+      color: $white !important;
+    }
+  }
+}
+
+.ui-state-disabled {
+  color: rgba(0, 0, 0, 0.25);
+}
+
+.ui-datepicker-prev {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-right: 1px solid $blue;
+  border-bottom: 1px solid $blue;
+  position: absolute;
+  left: 30px;
+  top: 50%;
+  transform: translateY(-50%) rotate(135deg);
+  cursor: pointer;
+  span {
+    display: none;
+  }
+}
+
+.ui-datepicker-next {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-right: 1px solid $blue;
+  border-bottom: 1px solid $blue;
+  position: absolute;
+  right: 30px;
+  top: 50%;
+  transform: translateY(-50%) rotate(-45deg);
+  cursor: pointer;
+  span {
+    display: none;
+  }
+}
+
+.ui-datepicker-header {
+  position: relative;
+  margin-left: -15px;
+  margin-right: -15px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.09);
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.ui-datepicker-title {
+  text-align: center;
+  color: rgba(0, 0, 0, 0.85);
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 22px;;
+}

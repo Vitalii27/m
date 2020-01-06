@@ -1,0 +1,22 @@
+<div class="pagination" id="pagination">
+    <div class="wp-pagenavi" role="navigation">
+        <a class="previouspostslink" rel="prev" href="#"
+           :class="{ 'disable': pagination.currentPage === 1 }"
+           @click.prevent="prevPage(pagination.currentPage)"></a>
+
+        <a class="page"
+           href="#"
+           v-if="Math.abs(p - pagination.currentPage) < neighbourPagesQty || p === 1 || p === pagination.pages.length"
+           v-for="p in pagination.pages"
+           @click.prevent="setPage(p)"
+           :class="{
+		   	current: p === pagination.currentPage,
+		    first: Math.abs(p - pagination.currentPage) > neighbourPagesQty && p === 1,
+            last: Math.abs(p - pagination.currentPage) > neighbourPagesQty && p === pagination.pages.length}">{{p}}</a>
+
+        <a class="nextpostslink" rel="next" href="#"
+           :class="{ 'disable': pagination.currentPage === pagination.pages.length }"
+           @click.prevent="nextPage(pagination.currentPage)"></a>
+    </div>
+</div>
+<!--<p v-text="collection"></p>-->

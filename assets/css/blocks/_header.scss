@@ -1,0 +1,618 @@
+.header {
+    position: fixed;
+    z-index: 99999;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px 0;
+    background: $darkblue;
+    @include media(">=desktop") {
+        padding: 18px 0 17px;
+        transition: transform $transition;
+    }
+    .homepage & {
+        @include media(">=desktop") {
+            position: absolute;
+            transition: none;
+        }
+    }
+    .container-large {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        @include media(">=desktop") {
+            padding: 0 15px;
+            max-width: 1200px;
+        }
+        @include media(">=large-desktop") {
+            max-width: 1750px;
+        }
+
+    }
+
+    .logo {
+        display: inline-block;
+        width: 75px;
+        height: 30px;
+        @include media(">=desktop") {
+            width: 100px;
+            height: 40px;
+        }
+
+        a {
+
+        }
+
+        img {
+            max-width: 100%;
+        }
+    }
+
+    .additional-info {
+        border-top: 1px solid rgba($white, .2);
+        display: flex;
+        flex-direction: column;
+        padding: 0 15px;
+        margin-bottom: 34px;
+        @include media(">=desktop") {
+            border-top: 0;
+            flex-direction: row;
+            align-items: center;
+            padding: 0;
+            margin-right: 19px;
+            margin-bottom: 0;
+
+        }
+        ul {
+            display: flex;
+            flex-direction: column;
+            font-size: 16px;
+            color: rgba($white, .75);
+            @include media(">=desktop") {
+                flex-direction: row;
+                color: $white;
+                margin: 0 40px 0 0;
+                font-size: 14px;
+            }
+            li {
+                padding: 21px 0 18px;
+                border-bottom: 1px solid rgba($white, .2);
+                @include media(">=desktop") {
+                    padding: 0;
+                    border: 0;
+                }
+                & + li {
+                    @include media(">=desktop") {
+                        margin-left: 40px;
+                    }
+                    @include media(">=large-desktop") {
+                        margin-left: 44px;
+                    }
+                }
+            }
+            a {
+                display: inline-block;
+                opacity: 1;
+                transition: opacity $transition;
+                &:hover {
+                    @include media(">=desktop") {
+                        opacity: .5;
+                    }
+                }
+            }
+        }
+    }
+
+    .search-link {
+        width: 15px;
+        height: 20px;
+        margin-top: 18px;
+        opacity: 1;
+        transition: opacity $transition;
+        position: relative;
+        display: none;
+        cursor: pointer;
+        &:hover {
+            @include media(">=desktop") {
+                opacity: .5;
+            }
+        }
+        @include media(">=desktop") {
+            margin: 0 40px 0 0;
+            display: block;
+        }
+    }
+
+    &.is-fixed {
+        @include media(">=desktop") {
+            position: fixed;
+            transform: translateY(-75px);
+        }
+        .additional-nav {
+            opacity: 0;
+            visibility: hidden;
+            @include media(">=desktop") {
+                opacity: 1;
+                visibility: visible;
+                background: $blue;
+            }
+            .logo {
+                @include media(">=large-desktop") {
+                    opacity: 1;
+                    visibility: visible;
+                }
+            }
+        }
+    }
+
+    .head-search {
+        opacity: 1;
+        visibility: visible;
+        position: relative;
+        display: flex;
+        transition: opacity $transition;
+        @include media(">=desktop") {
+            opacity: 0;
+            visibility: hidden;
+            position: absolute;
+        }
+        .form-group {
+            width: 100%;
+            @include media(">=desktop") {
+                margin-right: 20px;
+                width: auto;
+            }
+            input {
+                margin-bottom: 0;
+                background-color: #33ade1;
+                height: 35px;
+                padding-left: 43px;
+                color: $white;
+                border-color: transparent;
+                @include media(">=desktop") {
+                    width: 630px;
+                }
+                @include placeholder {
+                    color: rgba($white, .5);
+                    font-size: 14px;
+                }
+            }
+        }
+        button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            left: 15px;
+            height: 20px;
+            width: 20px;
+            background-color: transparent;
+            padding: 0;
+            svg {
+                width: 15px;
+                height: 15px;
+            }
+        }
+
+    }
+    .additional-info {
+        & > ul {
+            transition: opacity $transition;
+            margin-bottom: 25px;
+            @include media(">=desktop") {
+                margin-bottom: 0;
+            }
+        }
+    }
+    .search-icon {
+        svg {
+            width: 15px;
+            height: 15px;
+        }
+    }
+    .active-search {
+        .head-search {
+            opacity: 1;
+            visibility: visible;
+            position: relative;
+        }
+        .top-nav, & > ul {
+            opacity: 0;
+            visibility: hidden;
+            position: absolute;
+        }
+        .search-icon {
+            opacity: 0;
+            visibility: hidden;
+            position: absolute;
+        }
+        .close {
+            opacity: 1;
+            visibility: visible;
+            right: 0;
+            top: 0;
+            &:before, &:after {
+                background-color: $white;
+            }
+        }
+    }
+}
+
+.current-lang {
+    margin-top: 33px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    font-size: 14px;
+    color: $white;
+    transition: color $transition;
+    &:hover {
+        color: $white;
+        @include media(">=desktop") {
+            color: rgba($white, .5) !important;
+        }
+    }
+    @include media(">=desktop") {
+        margin-top: 0;
+    }
+    &:after {
+        @include media(">=desktop") {
+            content: '';
+            position: absolute;
+            width: 6px;
+            height: 6px;
+            border-width: 0 1px 1px 0;
+            border-color: $white;
+            border-style: solid;
+            right: -18px;
+            top: 8px;
+            transform: rotate(45deg);
+        }
+    }
+    .icon {
+        width: 19px;
+        height: 12px;
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        margin-right: 10px;
+    }
+}
+
+.burger {
+    width: 25px;
+    height: 8px;
+    position: relative;
+    font-size: 0;
+    cursor: pointer;
+    @include media(">=desktop") {
+        display: none;
+    }
+    &:before, &:after {
+        content: '';
+        position: absolute;
+        left: 0;
+        height: 1px;
+        width: 100%;
+        background: $white;
+        transition: top $transition, bottom $transition, transform $transition;
+    }
+
+    &:before {
+        top: 0;
+    }
+
+    &:after {
+        bottom: 0;
+    }
+
+    .show-m-menu & {
+        &:before {
+            top: 50%;
+            transform: translateY(-50%) rotate(45deg);
+        }
+
+        &:after {
+            bottom: 50%;
+            transform: translateY(50%) rotate(-45deg);
+        }
+    }
+}
+
+.main-nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: calc(100vh - 50px);
+    background: $darkblue;
+    border-top: 1px solid rgba($white, .2);
+    transform: translateX(-100%);
+    transition: transform $transition;
+    overflow: auto;
+    padding-bottom: 34px;
+
+    .show-m-menu & {
+        transform: translateX(0);
+    }
+
+    .categories {
+        display: flex;
+        flex-direction: column;
+        padding: 0 15px;
+        font-size: 16px;
+        color: $white;
+        @include media(">=desktop") {
+            display: none;
+        }
+        li {
+            padding: 21px 0 18px;
+
+            & + li {
+                border-top: 1px solid rgba($white, .2);
+
+            }
+        }
+    }
+    @include media(">=desktop") {
+        transform: translate(0);
+        width: auto;
+        height: auto;
+        background: transparent;
+        position: static;
+        padding: 0;
+        border-top: none;
+        overflow: hidden;
+    }
+}
+
+.language-popup {
+    position: absolute;
+    z-index: 50;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    background: $white;
+    padding: 51px 34px 58px;
+    display: none;
+    overflow: auto;
+    transition: height $transition;
+    @include media(">=desktop") {
+        height: calc(100vh - 75px);
+        top: 75px;
+        padding: 45px 87px 50px;
+    }
+    @include media(">=large-desktop") {
+        max-width: 1245px;
+        height: auto;
+        right: 55px;
+        left: auto;
+        width: auto;
+        padding: 56px 85px 50px;
+    }
+    .cross {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        width: 19px;
+        height: 19px;
+        cursor: pointer;
+        @include media(">=desktop") {
+            top: 56px;
+            right: 78px;
+        }
+        @include media(">=large-desktop") {
+            right: 45px;
+        }
+        &:before, &:after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 25px;
+            height: 1px;
+            background: $black;
+        }
+
+        &:before {
+            transform: translate(-50%, -50%) rotate(45deg);
+        }
+
+        &:after {
+            transform: translate(-50%, -50%) rotate(-45deg);
+        }
+    }
+}
+
+.mainland {
+    margin-bottom: 34px;
+    @include media(">=desktop") {
+        margin-bottom: 40px;
+    }
+    @include media(">=large-desktop") {
+        margin-bottom: 56px;
+    }
+    &:last-of-type {
+        margin-bottom: 0;
+    }
+    .name {
+        font-size: 20px;
+        font-weight: $bold;
+        margin-bottom: 21px;
+        letter-spacing: -1.5px;
+        @include media(">=desktop") {
+            font-size: 24px;
+            font-weight: $regular;
+            margin-bottom: 27px;
+            letter-spacing: 0;
+        }
+        @include media(">=large-desktop") {
+            margin-bottom: 25px;
+        }
+    }
+    .flag {
+        width: 27px;
+        height: 18px;
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        margin-right: 15px;
+    }
+    .countries {
+        @include media(">=desktop") {
+            display: flex;
+            flex-wrap: wrap;
+            margin-bottom: -24px;
+        }
+    }
+    .country {
+        display: flex;
+        align-items: center;
+        font-weight: $bold;
+        font-size: 14px;
+        letter-spacing: -1px;
+
+        @include media(">=desktop") {
+            width: calc(25% - 50px);
+            margin-right: 50px;
+            margin-bottom: 24px;
+            font-weight: $regular;
+            letter-spacing: 0;
+        }
+        @include media(">=large-desktop") {
+            width: calc(25% - 20px);
+            margin-right: 20px;
+            margin-bottom: 21px;
+        }
+        &:hover {
+            text-decoration: underline;
+        }
+        & + .country {
+            margin-top: 24px;
+            @include media(">=desktop") {
+                margin-top: 0;
+            }
+        }
+    }
+
+}
+
+.additional-nav {
+    position: absolute;
+    width: 100%;
+    top: 100%;
+    left: 0;
+    z-index: -1;
+    background: $blue;
+    visibility: visible;
+    opacity: 1;
+    transition: background-color $transition, opacity $transition, visibility $transition;
+    @include media(">=desktop") {
+        border-bottom: 0;
+    }
+    .homepage & {
+        background: rgba($black, .34);
+        @include media(">=desktop") {
+            background: transparent;
+            border-bottom: 1px solid rgba($white, .25);
+        }
+    }
+    .logo {
+        display: none;
+        @include media(">=large-desktop") {
+            display: block;
+            position: absolute;
+            left: 100px;
+            top: 50%;
+            transform: translateY(-50%);
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity $transition, visibility $transition;
+        }
+        @include media(">=large-desktop") {
+            width: 137px;
+            height: 55px;
+        }
+    }
+    .categories {
+        display: flex;
+        align-items: flex-start;
+        overflow: auto;
+        white-space: nowrap;
+        margin: 0 0;
+        padding: 20px 23px 14px;
+        @include media(">=tablet-landscape") {
+            justify-content: center;
+        }
+
+        @include media(">=desktop") {
+            padding: 24px 23px 21px;
+        }
+        @include media(">=large-desktop") {
+            padding: 24px 23px 18px;
+        }
+        a {
+            color: $white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            &:hover {
+                .icon {
+                    display: none;
+                    &-hover {
+                        display: block;
+                    }
+                }
+            }
+        }
+        li {
+            margin-right: 50px;
+            @include media(">=tablet-landscape") {
+                &:last-child {
+                    margin-right: 0;
+                }
+            }
+            @include media(">=desktop") {
+                margin: 0 31px;
+            }
+            @include media(">=large-desktop") {
+                margin: 0 50px;
+            }
+            &:last-of-type {
+                padding-right: 25px;
+                @include media(">=desktop") {
+                    padding-right: 0;
+                }
+            }
+            & + li {
+                //margin-left: 50px;
+            }
+        }
+    }
+    .icons-holder {
+        margin-bottom: 9px;
+        width: 29px;
+        height: 30px;
+        @include media(">=desktop") {
+            margin-bottom: 15px;
+            width: 33px;
+            height: 35px;
+        }
+    }
+    .icon {
+        width: 100%;
+        height: 100%;
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        &-hover {
+            width: 100%;
+            height: 100%;
+            background-size: contain;
+            background-position: center;
+            background-repeat: no-repeat;
+            display: none;
+        }
+    }
+
+}

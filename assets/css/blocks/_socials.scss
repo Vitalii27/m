@@ -1,0 +1,68 @@
+.social-links {
+    display: flex;
+    flex-wrap: wrap;
+    svg {
+        fill: $white;
+    }
+    li {
+        padding-left: 42px;
+        &:first-child {
+            padding-left: 0;
+        }
+        &:before {
+            display: none;
+        }
+    }
+}
+
+.social-link {
+    height: 100%;
+    cursor: pointer;
+    svg {
+        height: 22px;
+        width: 22px;
+        fill: $white;
+        transition: fill $transition, opacity $transition;
+        @include media(">=desktop") {
+            opacity: .55;
+            &:hover {
+                opacity: 1;
+            }
+        }
+    }
+    &.facebook {
+        &:hover {
+            svg {
+                fill: #0065b4;;
+            }
+        }
+    }
+    &.twitter {
+        &:hover {
+            svg {
+                fill: $white;;
+            }
+        }
+    }
+    &.youtube {
+        svg {
+            width: 30px;
+        }
+        &:hover {
+            svg {
+                fill: #d90119;
+            }
+        }
+    }
+    &.instagram {
+        #inst-gradient {
+            opacity: 0.0;
+            display: inline-block;
+            transition: opacity $transition;
+            &:hover {
+                opacity: 1.0;
+            }
+        }
+    }
+
+}

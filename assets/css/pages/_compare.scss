@@ -1,0 +1,249 @@
+.container-compare {
+    max-width: 1520px;
+    width: 100%;
+    padding: 0 15px;
+    margin: 0 auto;
+}
+
+.table-holder {
+    position: relative;
+    margin: 0 -15px 50px 0;
+    @include media(">=medium-desktop") {
+        .no-touch & {
+            margin: 0 0 50px 0;
+        }
+    }
+    table {
+        margin-bottom: 0;
+    }
+    .product {
+        background: transparent;
+        box-shadow: $defaultBoxShadow;
+        .h6 {
+            font-size: 14px;
+            @include media("<medium-desktop") {
+                line-height: 16px;
+            }
+            @include media(">=medium-desktop") {
+                font-size: 16px;
+            }
+        }
+        .description-holder {
+            padding: 10px;
+            font-weight: $regular;
+            @include media(">=medium-desktop") {
+                .no-touch & {
+                    padding: 15px 20px 22px;
+                }
+            }
+        }
+        .action {
+            margin-top: 10px;
+            @include media(">=medium-desktop") {
+                margin-top: 20px;
+            }
+            .button {
+                margin-right: 0;
+                width: 100%;
+                height: 35px;
+                line-height: 35px;
+                padding-top: 0;
+                padding-bottom: 0;
+                font-size: 14px;
+                @include media("<medium-desktop") {
+                    padding: 0 5px;
+                }
+                @include media(">=medium-desktop") {
+                    font-size: 16px;
+                    height: 45px;
+                    line-height: 45px;
+                }
+            }
+        }
+    }
+    .image-holder {
+        width: 100%;
+        height: 100px;
+        padding: 0;
+        @include media(">=medium-desktop") {
+            .no-touch & {
+                height: 245px;
+            }
+        }
+        img {
+            padding: 10px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            height: auto;
+            width: auto;
+            transform: translate(-50%, -50%);
+        }
+    }
+    .remove {
+        cursor: pointer;
+        position: absolute;
+        top: -12px;
+        right: -12px;
+        width: 25px;
+        height: 25px;
+        border-radius: 50%;
+        background: $blue;
+        z-index: 1;
+        transform: rotate(45deg);
+        &:before, &:after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: $white;
+        }
+        &:before {
+            width: 12px;
+            height: 1px;
+        }
+        &:after {
+            width: 1px;
+            height: 12px;
+        }
+    }
+    tr {
+        border-style: dotted;
+        border-width: 1px 0 1px 0;
+        border-color: #e5e5e5;
+        min-height: 50px;
+    }
+    th {
+        text-align: left;
+        font-weight: $regular;
+        line-height: 12px;
+        font-size: 12px;
+        border: 0;
+        padding: 10px 5px 10px 0;
+        background: $white;
+        z-index: 1;
+        width: 100px;
+        min-width: 100px;
+        @include media(">=medium-desktop") {
+            .no-touch & {
+                line-height: 16px;
+                font-size: 16px;
+                position: static;
+                height: auto;
+                padding: 20px 0;
+                width: 320px;
+                min-width: 225px;
+            }
+        }
+    }
+    td {
+        text-align: center;
+        font-weight: $bold;
+        line-height: 18px;
+        font-size: 14px;
+        border: 0;
+        padding: 10px;
+        max-width: 150px;
+        width: 150px;
+        @include media(">=tablet") {
+            line-height: 24px;
+            padding: 20px 25px;
+            min-width: 250px;
+            width: auto;
+            font-size: 16px;
+            max-width: 300px;
+        }
+        &:nth-child(even) {
+            background: #fafafa;
+        }
+    }
+    .images, .attribute {
+        border: 0;
+        th {
+            font-size: 14px;
+            font-weight: $bold;
+            color: $blue;
+            padding: 15px 0;
+            @include media(">=medium-desktop") {
+                font-size: 20px;
+                padding: 30px 0;
+            }
+        }
+        td {
+            font-size: 14px;
+            background: transparent !important;
+            @include media(">=medium-desktop") {
+                font-size: 16px;
+            }
+        }
+
+    }
+    .images {
+        td {
+            vertical-align: top;
+            @include media(">=medium-desktop") {
+                .no-touch & {
+                    padding: 0 30px 0 15px;
+                    text-align: left;
+                }
+            }
+        }
+    }
+}
+
+.compare-table {
+    margin: 50px 0 0 100px;
+    font-size: 14px;
+    overflow-x: auto;
+    padding-top: 12px;
+    position: relative;
+    z-index: 20;
+    @include media(">=medium-desktop") {
+        .no-touch & {
+            margin: 130px 0;
+        }
+    }
+    @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+        @include media(">=medium-desktop") {
+            overflow: hidden;
+        }
+    }
+}
+
+.attr-table {
+    //background: violet;
+    position: absolute;
+    left: 0;
+    top: 0;
+    margin: 0;
+    margin-top: 12px;
+    @include media(">=medium-desktop") {
+        .no-touch & {
+            display: none;
+        }
+    }
+    .images, td {
+        visibility: hidden;
+        opacity: 0;
+        pointer-events: none;
+    }
+}
+
+.main-table {
+    //background: #750000;
+    margin-left: -100px;
+    @include media(">=medium-desktop") {
+        .no-touch & {
+            margin-left: 0;
+        }
+    }
+    th {
+        //display: none;
+        @include media(">=medium-desktop") {
+            .no-touch & {
+                display: block;
+            }
+        }
+    }
+}

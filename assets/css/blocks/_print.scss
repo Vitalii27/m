@@ -1,0 +1,48 @@
+@media print {
+  * {
+    -webkit-print-color-adjust: exact;
+  }
+  body, .wrapper {
+    display: block;
+
+  }
+  .wrapper {
+    display: block;
+    height: auto;
+    * {
+      page-break-after: avoid !important;
+      page-break-before: avoid !important;
+
+    }
+  }
+
+  .footer, .header, .help-info, .video, .breadcrumbs, .intro-slider, .button, aside, .related-news {
+    display: none !important;
+  }
+
+  img {
+    width: 100%;
+    margin-bottom: 50px;
+    height: auto;
+  }
+  .page-heading {
+    height: 300px;
+
+  }
+
+  .bg-image img {
+    opacity: 1;
+    position: static;
+  }
+  .news-details-holder {
+    margin-top: 0 !important;
+  }
+  p {
+    margin-bottom: 15px !important;
+  }
+  blockquote {
+    margin-top: 5px !important;
+
+  }
+
+}

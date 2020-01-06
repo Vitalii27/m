@@ -1,0 +1,794 @@
+// variables
+
+// colors
+$primary-color: #334499;
+$secondary-color: #336699;
+
+$white: #fff;
+$light-gray: #ccc;
+$medium-gray: #bbb;
+$dark-gray: #aaa;
+$black: #000;
+$danger-color: red;
+$warning-color: yellow;
+$success-color: green;
+
+$darkblue: #0099DA;
+$blue: #00B0F0;
+$lightblue: #3DCBFF;
+$darkblack: #1B1B1B;
+$lightblack: #313131;
+$grey: #9F9F9F;
+$gray-checkbox: #d1d1d1;
+$title-color: #1e202a;
+$subtitle-color: #545764;
+$red: #ff4a4a;
+
+$main-fz: 16px;
+$main-lh: 1.5;
+$main-ff: "Gotham A", "Gotham B", sans-serif;
+$main-text-color: $lightblack;
+$headings-lh: 1.2;
+$main-margin: $main-fz * $main-lh;
+
+$regular: 300;
+$bold: 700;
+
+$defaultBoxShadow: 0 0 17px rgba(0, 0, 0, 0.08);
+
+$fast-transition: .15s;
+$transition: .3s;
+$slow-transition: .6s;
+$xslow-transition: 1s;
+
+// grid settings
+$gl-colCount: 24;
+$gl-gridName: grid;
+$gl-colName: col;
+$gl-attributeName: class;
+$gl-gutter: 30px; // Total left + right
+$gl-gutter-vertical: 0;
+$gl-mq-width: 'min-width';
+$gl-mq-list: (
+        xs: 320px,
+        sm: 768px,
+        md: 1200px,
+        lg: 1800px
+);
+
+// media settings
+$breakpoints: (
+        mobile-landscape: 568px,
+        tablet: 768px,
+        tablet-landscape: 1024px,
+        desktop: 1200px,
+        medium-desktop: 1440px,
+        large-desktop: 1800px,
+        ultra-desktop: 2400px
+);
+
+$images-path: '../images/';
+
+body {
+    font: 14px/20px $main-ff;
+    color: $main-text-color;
+    background: $white;
+    -webkit-font-smoothing: antialiased;
+    @include media(">=desktop") {
+        font: 16px/24px $main-ff;
+    }
+}
+
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+    // common styles
+    font-weight: $bold;
+    color: $darkblack;
+}
+
+h1, .h1 {
+    font-size: 32px;
+    line-height: 42px;
+    @include media(">=desktop") {
+        font-size: 65px;
+        line-height: 75px;
+    }
+
+    @include media(">=large-desktop") {
+        font-size: 85px;
+        line-height: 95px;
+    }
+}
+
+h2, .h2 {
+    font-size: 30px;
+    line-height: 38px;
+    @include media(">=desktop") {
+        font-size: 42px;
+        line-height: 52px;
+    }
+
+    @include media(">=large-desktop") {
+        font-size: 52px;
+        line-height: 62px;
+    }
+}
+
+h3, .h3 {
+    font-size: 20px;
+    line-height: 26px;
+    @include media(">=desktop") {
+        font-size: 30px;
+        line-height: 40px;
+    }
+
+    @include media(">=large-desktop") {
+        font-size: 36px;
+        line-height: 46px;
+    }
+}
+
+h4, .h4 {
+    font-size: 18px;
+    line-height: 26px;
+    @include media(">=desktop") {
+        font-size: 22px;
+        line-height: 32px;
+    }
+
+    @include media(">=large-desktop") {
+        font-size: 20px;
+        line-height: 28px;
+    }
+
+}
+
+h5, .h5 {
+    font-size: 16px;
+    line-height: 24px;
+
+    @include media(">=large-desktop") {
+        font-size: 18px;
+        line-height: 26px;
+    }
+}
+
+h6, .h6 {
+    font-size: 14px;
+    line-height: 22px;
+    @include media(">=large-desktop") {
+        font-size: 16px;
+        line-height: 22px;
+    }
+}
+
+.link {
+    text-decoration: underline;
+    color: $blue;
+    .no-touch & {
+        @include media(">=desktop") {
+            &:hover {
+                text-decoration: none;
+                color: $blue;
+            }
+        }
+    }
+}
+
+p {
+    margin-bottom: 20px;
+    a {
+        @extend .link;
+    }
+}
+
+mark {
+    background: transparent;
+    font-weight: $bold;
+    color: $lightblue;
+}
+
+a {
+    text-decoration: none;
+    outline: none;
+    color: inherit;
+    font: inherit;
+
+    .no-touch & {
+        @include media(">=desktop") {
+            &:hover {
+                color: inherit;
+                text-decoration: none;
+
+                .content & {
+                    color: $blue;
+
+                    @include media('>=desktop') {
+                        transition: color $transition;
+                    }
+                }
+            }
+        }
+    }
+}
+
+ul {
+
+    .content &,
+    &.unordered-list,
+    &.property {
+        li {
+            position: relative;
+            padding-left: 18px;
+            margin-bottom: 12px;
+
+            @include media('>=desktop') {
+                padding-left: 26px;
+                margin-bottom: 20px;
+            }
+
+            &:before {
+                content: "";
+                position: absolute;
+                top: 10px;
+                left: 0;
+                width: 6px;
+                height: 6px;
+                border-radius: 50%;
+                background-color: $darkblue;
+
+            }
+        }
+    }
+}
+
+ol {
+
+    counter-reset: counterName;
+
+    li {
+        position: relative;
+        margin-bottom: 12px;
+        padding-left: 42px;
+        a {
+            @extend .link;
+        }
+        @include media('>=desktop') {
+            margin-bottom: 18px;
+            line-height: 26px;
+        }
+
+        @include media('>=large-desktop') {
+            margin-bottom: 20px;
+        }
+
+        &:before {
+            position: absolute;
+            top: 0;
+            left: 0;
+            counter-increment: counterName;
+            content: counter(counterName, decimal-leading-zero);
+            font-size: 14px;
+            line-height: 20px;
+            font-weight: $bold;
+            color: $darkblue;
+
+            @include media('>=desktop') {
+                top: 1px;
+                font-size: 16px;
+                line-height: 24px;
+            }
+        }
+    }
+
+    ul,
+    ol {
+        margin: 0;
+        padding-left: 20px;
+    }
+    &.anchor-list {
+        li {
+            &:before {
+                content: '(' counter(counterName) ')';
+
+            }
+        }
+    }
+}
+
+// forms
+
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="tel"],
+input[type="number"] {
+    display: inline-block;
+    margin: 0 0 $main-margin;
+    border: 1px solid $gray-checkbox;
+    padding: 5px 25px;
+    line-height: 30px;
+    font-size: 16px;
+    width: 100%;
+    height: 50px;
+    vertical-align: middle;
+    background: $white;
+    color: $darkblack;
+    outline: none;
+    -webkit-appearance: none;
+    border-radius: 25px;
+    transition: border-color $transition, color $transition, background-color $transition;
+    @include placeholder {
+        color: $darkblack;
+    }
+    &:focus {
+        border-color: $darkblue;
+    }
+    &.error {
+        color: $red;
+    }
+}
+
+select {
+    display: inline-block;
+    margin: 0 0 $main-margin;
+    border: 1px solid $light-gray;
+    padding: 5px 20px;
+    line-height: 30px;
+    font-size: 16px;
+    height: 42px;
+    vertical-align: middle;
+    background: $white;
+    outline: none;
+    &:focus {
+        border-color: $primary-color;
+    }
+}
+
+.button,
+input[type="submit"],
+button {
+    display: inline-block;
+    margin: 0 0 $main-margin;
+    border: 1px solid transparent;
+    padding: 13px 58px;
+    line-height: 21px;
+    font-size: 16px;
+    height: 50px;
+    color: $white;
+    vertical-align: middle;
+    text-decoration: none;
+    white-space: nowrap;
+    background: $blue;
+    cursor: pointer;
+    -webkit-appearance: none;
+    border-radius: 28px;
+    text-align: center;
+    transition: background-color $transition, color $transition;
+    @include media('>=desktop') {
+        padding: 16px 58px;
+        height: 55px;
+    }
+    .no-touch & {
+        @include media(">=desktop") {
+            &:hover {
+                color: $white;
+                background: $lightblue;
+            }
+        }
+    }
+    &.hollow {
+        background: transparent;
+        color: $white;
+        border: 1px solid $white;
+        font-size: 14px;
+        height: 45px;
+        padding: 12px 56px;
+        .no-touch & {
+            @include media(">=desktop") {
+                &:hover {
+                    background: $white;
+                    color: $darkblack;
+                }
+            }
+        }
+    }
+    &.white {
+        background: $white;
+        color: $darkblack;
+        .no-touch & {
+            @include media(">=desktop") {
+                &:hover {
+                    background: rgba($white, .9);
+                }
+            }
+        }
+    }
+    &.clear-small {
+        height: auto;
+        padding-top: 5px;
+        padding-bottom: 6px;
+        margin-left: auto;
+        margin-right: auto;
+        background-color: transparent;
+        border: 1px solid $lightblue;
+        color: $lightblue;
+        &:hover {
+            background-color: $lightblue;
+            color: $white;
+        }
+    }
+    form & {
+        height: 50px;
+        padding: 13px 35px;
+    }
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+body.touch {
+    input[type="checkbox"] {
+        &:hover {
+            & + label {
+                span {
+                    &:after {
+                        border-color: transparent;
+                    }
+                }
+            }
+        }
+        &:checked {
+            & + label {
+                span {
+                    color: $black;
+                    &:before {
+                        background: $darkblue;
+                        border-color: transparent;
+                    }
+                    &:after {
+                        border-color: $white;
+                    }
+                }
+
+            }
+        }
+    }
+}
+
+input[type="checkbox"] {
+    position: absolute;
+    opacity: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+    cursor: pointer;
+    &:checked {
+        & + label {
+            span {
+                &:before {
+                    background: $darkblue;
+                    border-color: transparent;
+                }
+                &:after {
+                    border-color: $white;
+                }
+            }
+
+        }
+    }
+    .no-touch & {
+        @include media(">=desktop") {
+            &:hover {
+                & + label {
+                    span {
+                        &:after {
+                            @include media(">=desktop") {
+                                border-color: $darkblue;
+                            }
+                        }
+                    }
+                }
+                &:checked {
+                    & + label {
+                        span {
+                            &:after {
+                                @include media(">=desktop") {
+                                    border-color: $white;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &:disabled {
+        & + label {
+            opacity: 0.5;
+            cursor: auto;
+            span {
+                &:after {
+                    border-color: transparent;
+                }
+            }
+        }
+
+    }
+    & + label {
+        position: relative;
+        display: inline-block;
+        cursor: pointer;
+        margin: 0;
+        text-transform: none;
+        font-size: 14px;
+        //padding-left: 45px;
+        padding-left: 35px;
+        transition: color $transition;
+        letter-spacing: 0;
+        span {
+            position: relative;
+            color: $darkblack;
+            transition: color $transition;
+            &:before {
+                position: absolute;
+                content: '';
+                left: -35px;
+                //left: -45px;
+                top: -2px;
+                border: 2px solid $gray-checkbox;
+                border-radius: 4px;
+                width: 20px;
+                height: 20px;
+                transition: background-color $transition;
+            }
+            &:after {
+                position: absolute;
+                content: '';
+                left: -29px;
+                top: 1px;
+                border-width: 0 2px 2px 0;
+                border-style: solid;
+                border-color: transparent;
+                border-radius: 2px;
+                width: 7px;
+                height: 10px;
+                transition: border-color $transition;
+                transform: rotate(45deg);
+            }
+        }
+    }
+}
+
+input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+    height: 0;
+    width: 0;
+    &:checked {
+        & + label {
+            span {
+                &:before {
+                    background: $darkblue;
+                    border-color: transparent;
+                }
+                &:after {
+                    background: $white;
+                }
+            }
+        }
+    }
+    .no-touch & {
+        @include media(">=desktop") {
+            &:hover {
+                & + label {
+                    span {
+                        &:after {
+                            background: $darkblue;
+                        }
+                    }
+                }
+                &:checked {
+                    & + label {
+                        span {
+                            &:after {
+                                background: $white;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &:disabled {
+        & + label {
+            opacity: 0.4;
+            cursor: auto;
+            span {
+                &:after {
+                    background: transparent;
+                }
+            }
+        }
+    }
+    & + label {
+        position: relative;
+        display: inline-block;
+        cursor: pointer;
+        margin: 0;
+        text-transform: none;
+        font-size: 14px;
+        padding-left: 35px;
+        transition: color $transition;
+        span {
+            position: relative;
+            color: $darkblack;
+            transition: color $transition;
+            &:before {
+                position: absolute;
+                content: '';
+                left: -35px;
+                top: -2px;
+                border: 2px solid $gray-checkbox;
+                border-radius: 50%;
+                width: 20px;
+                height: 20px;
+                transition: background-color $transition;
+            }
+            &:after {
+                position: absolute;
+                content: '';
+                left: -29px;
+                top: 4px;
+                border-radius: 50%;
+                background: transparent;
+                width: 8px;
+                height: 8px;
+                transition: background-color $transition;
+                transform: rotate(45deg);
+            }
+        }
+    }
+}
+
+label {
+    display: inline-block;
+    margin: 0 0 $main-margin;
+    vertical-align: middle;
+}
+
+blockquote {
+    margin: 0;
+    color: $darkblack;
+    font-weight: $regular;
+    font-size: 16px;
+    line-height: 26px;
+    font-style: normal;
+    &.fact {
+        position: relative;
+        padding-top: 14px;
+        max-width: 750px;
+        margin: 40px auto 28px;
+        font-size: 18px;
+        line-height: 24px;
+        @include media('>=desktop') {
+            margin: 40px auto 28px;
+            font-size: 20px;
+            line-height: 28px;
+        }
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 62px;
+            height: 3px;
+            background-color: $darkblue;
+        }
+        .holder {
+            .icon {
+                display: none;
+            }
+        }
+    }
+    &.quote {
+        padding: 70px 0 30px;
+        max-width: 660px;
+        margin: 0 auto 30px;
+        @include media('>=desktop') {
+            padding: 30px 0 0 90px;
+            max-width: 920px;
+            margin: 0 auto 55px;
+        }
+        .holder {
+            position: relative;
+            padding-top: 10px;
+
+            @include media('>=desktop') {
+                padding-top: 0;
+                max-width: 660px;
+            }
+            .icon {
+                display: block;
+                position: absolute;
+                top: 0;
+                left: 0;
+                transform: translateY(-100%);
+                width: 60px;
+                height: 52px;
+                max-width: none;
+                margin: 0;
+                @include media('>=desktop') {
+                    top: -25px;
+                    left: -90px;
+                    width: 60px;
+                    height: 48px;
+                    transform: translateY(0);
+                }
+            }
+
+        }
+    }
+    p {
+        margin: 0;
+    }
+    q {
+        quotes: none;
+        &:before,
+        &:after {
+            quotes: none;
+        }
+    }
+    cite {
+        display: block;
+        margin-top: 22px;
+        font-style: normal;
+        font-size: 16px;
+        font-weight: $regular;
+        line-height: 20px;
+        strong {
+            font-size: 18px;
+            line-height: 28px;
+            display: block;
+            margin-bottom: 4px;
+        }
+    }
+}
+
+table {
+    margin: 0 0 $main-margin;
+    th,
+    td {
+        border: 1px solid $medium-gray;
+        padding: 5px;
+    }
+}
+
+.bg-image {
+    display: block;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+
+    img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        max-width: 100%;
+        max-height: 100%;
+        opacity: 0;
+    }
+}
+
+.form-group[disabled="disabled"] {
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+
+input.max, input.min{
+    padding-left: 5px;
+    padding-right: 5px;
+    text-align: center;
+}

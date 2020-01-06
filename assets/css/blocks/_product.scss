@@ -1,0 +1,338 @@
+#app{
+    opacity: 0;
+    transition: .5s;
+}
+
+.product {
+    display: inline-block;
+    box-shadow: $defaultBoxShadow;
+    background-color: $white;
+    width: 100%;
+    position: relative;
+
+    h6, .h6 {
+        margin-bottom: 5px;
+        @include media(">=desktop") {
+            margin-bottom: 0;
+            letter-spacing: .3px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        @include media(">=large-desktop") {
+            letter-spacing: 0;
+            margin-bottom: 3px;
+        }
+    }
+
+    .image-holder {
+        display: inline-block;
+        padding: 22px 23px;
+        width: 100%;
+        height: 245px;
+        text-align: center;
+        position: relative;
+        @include media(">=desktop") {
+            padding: 14px 23px;
+            height: 165px;
+        }
+        @include media(">=large-desktop") {
+            padding: 25px 23px;
+            height: 300px;
+        }
+
+        img {
+            height: 100%;
+            width: auto;
+            max-width: 100%;
+            max-height: 100%;
+            margin: 0 auto;
+        }
+        &:hover {
+            .image-hover {
+                opacity: 1;
+                visibility: visible;
+            }
+        }
+    }
+    .image-hover {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+        @include media(">=desktop") {
+            background: rgba($black, .5);
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity $transition, visibility $transition;
+        }
+        .button {
+            position: absolute;
+            @include media("<desktop") {
+                top: 0;
+                left: 0;
+                border-radius: 0;
+                font-size: 0;
+                height: 100%;
+                width: 100%;
+                &:hover {
+                    background: transparent;
+                }
+            }
+            @include media(">=desktop") {
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+        }
+    }
+
+    .description-holder {
+        padding: 18px 15px 19px;
+        font-size: 12px;
+        line-height: 18px;
+        @include media(">=desktop") {
+            padding: 10px 16px 12px;
+            letter-spacing: 0;
+            font-size: 14px;
+            line-height: 19px;
+        }
+        @include media(">=large-desktop") {
+            padding: 17px 25px 12px;
+        }
+    }
+
+    .msrp-holder {
+        float: left;
+        font-weight: $bold;
+        text-transform: uppercase;
+        font-size: 14px;
+
+        .msrp {
+            display: inline-block;
+            margin-left: 7px;
+        }
+    }
+
+    .short-spec {
+        overflow: hidden;
+    }
+
+    .color-holder {
+        display: flex;
+        align-items: center;
+        float: right;
+        font-size: 14px;
+        @include media(">=desktop") {
+            margin-right: 5px;
+        }
+        @include media(">=large-desktop") {
+            margin-right: 0;
+        }
+    }
+
+    .variety {
+        display: flex;
+        align-items: center;
+        margin-left: 10px;
+
+        .item {
+            display: inline-block;
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            overflow: hidden;
+            cursor: pointer;
+            img {
+                width: 100%;
+                height: 100%;
+            }
+
+            & + .item {
+                margin-left: 5px;
+                @include media(">=desktop") {
+                    margin-left: 10px;
+                }
+            }
+        }
+    }
+
+    .model {
+        margin: 10px 0;
+        @include media(">=tablet") {
+            font-size: 16px;
+            line-height: 22px;
+        }
+
+        .code {
+            font-weight: $bold;
+        }
+    }
+
+    .reviews-holder {
+        display: flex;
+        align-items: center;
+        margin-bottom: 36px;
+        @include media(">=tablet") {
+            font-size: 16px;
+            line-height: 22px;
+        }
+    }
+
+    .rating, .rating-style {
+        margin-right: 15px;
+    }
+
+    .property {
+        margin-top: 31px;
+        margin-bottom: -10px;
+        @include media(">=tablet") {
+            font-size: 16px;
+            line-height: 22px;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+    }
+
+    .action {
+        //margin-top: 37px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        @include media(">=mobile-landscape") {
+            flex-direction: row;
+            justify-content: space-between;
+        }
+        @include media(">=desktop") {
+            //justify-content: flex-start;
+        }
+
+        button, .button {
+            font-size: 16px;
+            padding: 8px 33px;
+            height: 35px;
+            line-height: 1;
+            margin-bottom: 0;
+            @include media(">=mobile-landscape") {
+                margin-bottom: 0;
+            }
+            @include media(">=desktop", "<medium-desktop") {
+                padding-left: 20px;
+                padding-right: 20px;
+            }
+            @include media(">=desktop") {
+                //margin-right: 30px;
+                margin-right: 5px;
+            }
+            & + .form-group {
+                margin-top: 24px;
+                @include media(">=mobile-landscape") {
+                    margin-top: 0;
+                }
+                @include media(">=desktop") {
+                    //margin-left: 30px;
+                }
+                label{
+                    @include media(">=desktop", "<medium-desktop") {
+                        padding-left: 25px;
+                        span:before{
+                            left: -25px;
+                            top: -2px;
+                        }
+                        span:after{
+                            left: -19px;
+                            top: 2px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .product-new, .product-sale {
+        position: absolute;
+        top: 16px;
+        right: 16px;
+        font-size: 14px;
+        font-weight: $bold;
+        text-transform: capitalize;
+        @include media(">=tablet") {
+            font-size: 16px;
+        }
+    }
+
+    .product-new {
+        color: $darkblue;
+    }
+
+    .product-sale {
+        color: $red;
+    }
+
+    .product-color-item {
+        position: absolute;
+        height: 100%;
+        top: 0;
+        left: 0;
+        visibility: hidden;
+        opacity: 0;
+        transition: opacity $transition, visibility $transition;
+        &.active {
+            position: relative;
+            visibility: visible;
+            opacity: 1;
+        }
+        .action {
+            position: absolute;
+            left: 25px;
+            right: 25px;
+            bottom: 15px;
+            @include media(">=mobile-landscape") {
+                bottom: 35px;
+            }
+        }
+    }
+}
+
+.rating, .rating-style {
+    max-width: 120px;
+    display: flex;
+    img {
+        width: 100%;
+    }
+
+    .star-holder {
+        position: relative;
+        width: 20px;
+        height: 20px;
+        background: $gray-checkbox;
+        &+.star-holder {
+            margin-left: 5px;
+        }
+    }
+    .star {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        background: url("../images/star.svg");
+        background-repeat: no-repeat;
+        z-index: 10;
+        font-size: 0;
+        line-height: 0;
+    }
+    .progress-bar {
+        position: absolute;
+        top: 0;
+        left: 0;
+        font-size: 0;
+        line-height: 0;
+        background: $blue;
+        width: 0;
+        height: 100%;
+        z-index: 5;
+    }
+}

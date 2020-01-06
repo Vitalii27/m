@@ -1,0 +1,47 @@
+.anchors {
+    background-color: $blue;
+    padding-top: 24px;
+    padding-bottom: 24px;
+
+    ul {
+        display: flex;
+        align-items: center;
+        overflow-x: auto;
+        @include media('>=desktop') {
+            justify-content: flex-end;
+
+        }
+        @include media('>=large-desktop') {
+            //padding-right: 100px;
+        }
+        li {
+            //margin-top: 20px;
+            margin-left: 20px;
+            text-align: center;
+            @include media('>=desktop') {
+                margin-top: 0;
+                text-align: left;
+                margin-left: 46px;
+            }
+            a {
+                color: $white;
+                font-size: 18px;
+                white-space: nowrap;
+                transition: color $transition;
+                &:hover {
+                    color: rgba($white, .7);
+                }
+            }
+
+        }
+    }
+    .modal-link {
+        font-weight: $bold;
+    }
+    .container-large {
+        justify-content: center;
+        @include media('>=desktop') {
+            justify-content: flex-end;
+        }
+    }
+}

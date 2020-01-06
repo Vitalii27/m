@@ -1,0 +1,105 @@
+.news {
+    margin-top: 40px;
+    margin-bottom: 40px;
+    @include media('>=desktop') {
+        margin-top: 70px;
+    }
+    @include media('>=large-desktop') {
+        margin-top: 100px;
+        margin-bottom: 50px;
+    }
+}
+
+.see-more {
+    margin-top: 30px;
+    text-align: center;
+    @include media('>=desktop') {
+        margin-top: 50px;
+    }
+}
+
+.press-releases {
+    margin-top: 40px;
+    margin-bottom: 40px;
+    position: relative;
+    @include media('>=desktop') {
+        margin-top: 70px;
+    }
+    @include media('>=large-desktop') {
+        margin-top: 100px;
+        margin-bottom: 50px;
+    }
+    .holder {
+        position: relative;
+        margin-top: 40px;
+        @include media('>=desktop') {
+            margin-top: 70px;
+            display: flex;
+        }
+    }
+    .news-list {
+        margin-top: 0;
+    }
+    .wrapp {
+
+        width: 100%;
+        margin-right: 54px;
+        @include media('>=desktop') {
+            max-width: 666px;
+        }
+        @include media('>=large-desktop') {
+            max-width: 1020px;
+        }
+        li {
+            &:first-child {
+                @include media('>=tablet') {
+                    margin-top: 0;
+
+                }
+            }
+            .news-description {
+                @include media('>=desktop') {
+                    padding-left: 40px;
+                    padding-right: 60px;
+                }
+            }
+
+        }
+    }
+
+    .news-sidebar {
+        max-width: 450px;
+        width: 100%;
+        margin: 30px auto 0;
+        @include media('>=desktop') {
+            position: absolute;
+            top: 0;
+            right: 0;
+            margin-top: 0;
+            transition: transform $fast-transition;
+            @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+                position: static;
+            }
+        }
+
+        @include media('>=medium-desktop') {
+            max-width: 450px;
+        }
+
+        &.fixed {
+            @include media('>=desktop') {
+                position: fixed;
+                top: 140px;
+            }
+        }
+        &.bottom {
+            @include media('>=desktop') {
+                top: auto;
+                position: absolute;
+                right: 0;
+                bottom: 0;
+                margin-bottom: 0;
+            }
+        }
+    }
+}
